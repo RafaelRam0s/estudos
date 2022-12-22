@@ -1,0 +1,56 @@
+
+O HTML é um marcador textual no qual você monta a estrutura do seu site, com marcações e elementos.
+
+Inicializando um documento html:
+    
+    Para montar um arquivo html é preciso ter a extensão ".html".
+    
+    Além disso é necessário informar a versão que você estará trabalhando do html, a versão no qual estou fazendo as anotações é o html5, logo dentro do arquivo na primeira linha é necessário informar o código:
+        
+        <!DOCTYPE html>
+
+Estrutura base do html:
+    <!DOCTYPE html>
+    <html>
+        <head>
+        
+        </head>
+        <body>
+        
+        </body>
+    </html>
+
+Tagnames:
+
+    <head>
+        O que estiver dentro da tagname head é responsável por ajustar as configurações do seu arquivo html, ajustando como os interpretadores devem manipular o seu site, quais arquivos o seu site deverá acessar, entre diversas outras coisas, mas o principal é que ele é o responsável pela gerencia do seu arquivo.
+
+    <body>
+        Dentro da tagname body deve ficar tudo o que você deseja que o usuário possa ver e interagir
+
+    <title>
+        Dentro da tagname title fica o título do seu site, é o nome que aparece no Google quando você pesquisa um site e também o texto que fica na aba do seu navegador.
+            [
+                @@@ Imagens de exemplo: 
+                    ../_material/imagens/html/aba_de_pesquisa.png
+                    ../_material/imagens/html/site_w3schools_title.png
+            ]
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
