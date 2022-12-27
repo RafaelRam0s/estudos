@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test to verify redirection to this page with hreflang</title>
+</head>
+<body>
+
+    <h1>Testing then</h1>
+
+    <p>I'm putting together a paragraph with a large text in Portuguese to see if this page will be tried to be translated into English. That's why I'm putting together a long text to see how Google's intelligence will work, because a page will use a hyperlink to the hreflang in English, but on this page, within the tagname html, the pt-br configuration is there, so there should be no reason for Google to request the translation.</p>
+
+    <p>But I don't know how specifically the Google Translator translation recommendation works in Chrome, because some hypotheses have to be raised about it:</p>
+
+    <p>Hypothesis 1: Google interprets most of the text contained on the website and then, based on its own decisions, defines which language it is in. I find it difficult that this mechanism really exists, bearing in mind that optimizing page loading would make the process slower</p>
+
+    <p>Hypothesis 2: the attribute in the hreflang tagname would only work if the lang attribute is not defined within the html tagname</p>
+
+    <p>Hypothesis 3: the attribute in the hreflang tagname advances the browsers' thinking process, thus skipping the step of verifying the lang within the html tagname</p>
+
+    <p>Hypothesis 4: if the hreflang and the lang disagree with each other, the winner will be Google's tiebreaker criterion reading the site's text </p>
+
+    <p>Hypothesis 5: if hreflang and lang disagree, Google just doesn't recommend a language for the site</p>
+    
+    <h2>Result</h2>
+
+    <p>What happens is: Veja em index.html nesta mesma pasta</p>
+
+
+</body>
+</html>

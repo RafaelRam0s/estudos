@@ -1,0 +1,227 @@
+
+
+/* 
+    Este arquivo é uma folha de estilo personalizada com as preferências do Ramos, visando principalmente o Chrome 
+*/
+
+
+* {
+    font-family: monospace;
+    font-weight: 500;
+}
+
+div, nav, main, footer {
+    display: block;
+}
+
+head, meta, link, title {
+    display: none;
+}
+
+html {
+    display: block;
+    min-width: 100%;
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    position: absolute;
+    top: 0px;
+    display: block;
+    margin: 0px;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 0.45cm;
+}
+
+h1 {
+    display: block;
+    font-size: 0.8cm;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 900;
+}
+
+h2 {
+    display: block;
+    font-size: 0.75cm;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 900;
+}
+
+h3 {
+    display: block;
+    font-size: 0.7cm;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 900;
+}
+
+h4 {
+    display: block;
+    font-size: 0.65cm;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 900;
+}
+
+h5 {
+    display: block;
+    font-size: 0.6cm;
+    margin-block-start: 1.67em;
+    margin-block-end: 1.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 900;
+}
+
+h6 {
+    display: block;
+    font-size: 0.5cm;
+    margin-block-start: 2.33em;
+    margin-block-end: 2.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 900;
+} 
+
+h1, h2, h3, h4, h5, h6, p
+{
+    padding: 0px 8px 0px 8px;
+}
+
+
+
+
+
+/*
+    ========= PALETA DE CORES ==========
+*/
+
+:root {
+    --cor_z0: rgb(222, 222, 222);
+    --cor_z1: rgb(45, 45, 45);
+    
+    --cor_a1: #0600a1;
+    --cor_a2: #160cfc;
+    --cor_a3: #0800cd;
+    --cor_a4: #050081;
+    --cor_a5: #040060;
+    
+    --cor_b1: #00976d;
+    --cor_b2: #00fbb6;
+    --cor_b3: #00c68f;
+    --cor_b4: #007958;
+    --cor_b5: #005a41;
+    
+    --cor_c1: #8d0097;
+    --cor_c2: #eb01fb;
+    --cor_c3: #b900c6;
+    --cor_c4: #710079;
+    --cor_c5: #54005a;
+}
+
+
+
+html, body {
+    background-color: var(--cor_z0);
+}
+
+p {
+    color: var(--cor_a1);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--cor_z1);
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    text-shadow: 1px 0px 1px var(--cor_z0), 0px 1px 1px var(--cor_z0), -1px 0px 1px var(--cor_z0), 0px -1px 1px var(--cor_z0);
+}
+
+
+
+
+
+.bloco_cor_a1 {
+    background-color: var(--cor_a1);
+    padding: 10px;
+}
+.bloco_cor_a2 {
+    background-color: var(--cor_a2);
+    padding: 10px;
+}
+.bloco_cor_a3 {
+    background-color: var(--cor_a3);
+    padding: 10px;
+}
+.bloco_cor_a4 {
+    background-color: var(--cor_a4);
+    padding: 10px;
+}
+.bloco_cor_a5 {
+    background-color: var(--cor_a5);
+    padding: 10px;
+}
+
+.bloco_cor_b1 {
+    background-color: var(--cor_b1);
+    padding: 10px;
+}
+.bloco_cor_b2 {
+    background-color: var(--cor_b2);
+    padding: 10px;
+}
+.bloco_cor_b3 {
+    background-color: var(--cor_b3);
+    padding: 10px;
+}
+.bloco_cor_b4 {
+    background-color: var(--cor_b4);
+    padding: 10px;
+}
+.bloco_cor_b5 {
+    background-color: var(--cor_b5);
+    padding: 10px;
+}
+
+.bloco_cor_c1 {
+    background-color: var(--cor_c1);
+    padding: 10px;
+}
+.bloco_cor_c2 {
+    background-color: var(--cor_c2);
+    padding: 10px;
+}
+.bloco_cor_c3 {
+    background-color: var(--cor_c3);
+    padding: 10px;
+}
+.bloco_cor_c4 {
+    background-color: var(--cor_c4);
+    padding: 10px;
+}
+.bloco_cor_c5 {
+    background-color: var(--cor_c5);
+    padding: 10px;
+}
+
+

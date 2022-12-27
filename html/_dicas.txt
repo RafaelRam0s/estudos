@@ -1,0 +1,25 @@
+
+
+
+Site para estudar html:
+    https://www.w3schools.com/
+
+Site para verificar se sua página html foi bem formatada conforme os padrões do XHTML
+    https://validator.w3.org/nu/#file
+
+Site falando sobre extensões de arquivos de imagens:
+    https://neilpatel.com/br/blog/formatos-de-imagem/
+
+    Decisão: webp
+
+Site falando sobre extensões de arquivos de audio:
+    https://www.tecmundo.com.br/audio/105486-comparativo-10-formatos-audio-voce-deve-utiliza-los.htm
+    
+    Decisão: mp3
+
+
+
+
+
+
+

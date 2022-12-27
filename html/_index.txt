@@ -12,21 +12,420 @@ Inicializando um documento html:
 Estrutura base do html:
     <!DOCTYPE html>
     <html>
-        <head>
-        
-        </head>
-        <body>
-        
-        </body>
+    <head>
+    
+    </head>
+    <body>
+    
+    </body>
     </html>
 
 Tagnames:
 
-    <head>
-        O que estiver dentro da tagname head é responsável por ajustar as configurações do seu arquivo html, ajustando como os interpretadores devem manipular o seu site, quais arquivos o seu site deverá acessar, entre diversas outras coisas, mas o principal é que ele é o responsável pela gerencia do seu arquivo.
+    <!DOCTYPE html>
+        Define qual versão do html a sua página está dando suporte
+
+        Exemplos para páginas específicas:
+            [Pesquisa feita em: http://www.linhadecodigo.com.br/artigo/280/tutorial-xhtml.aspx#:~:text=XHTML%20%C3%A9%20a%20sigla%20em,puro%2C%20claro%20e%20limpo%22.]
+
+            XHTML 1.0 Strict:
+                <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+            
+                Esta é a mais rígida das declarações. Os documentos XHTML no modo Strict não admitem qualquer item de formatação dentro dos elementos e nem elementos em desuso "deprecated" segundo as recomendações da W3C. São indicados para uso com folhas de estilo em cascata, com marcação totalmente independente da apresentação
+
+            XHTML 1.0 Transitional:
+                <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+                
+                Esta declaração permite uma maior flexibilidade e é indicada para documentos que ainda utilizem elementos em desuso ("deprecated"), regras de apresentação embutidas em tags e também para documentos destinados a exibição em brownsers sem suporte para CSS. Não admite qualquer tipo de marcação para frames.
+
+            XHTML 1.0 Frameset:
+                <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+
+                Esta declaração permite tudo da declaração transational e mais os elementos especificos para frames.
+
+        Exemplos para outras versões:
+            HTML 4.01: <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+            XHTML 1.1: <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+    <a>
+        Dentro da tagname a o texto escrito ficará destacado, indicando um link que irá redirecionar o usuário
+
+        Atributos:
+
+            download=""
+                Este atributo juntamente do href faz o papel de baixar um conteúdo, o caminho do arquivo do conteúdo deverá estar descrito no href, e caso queira redefinir o nome do arquivo coloque dentro das aspas do atributo download o nome que gostaria que o arquivo tivesse (a extensão será acrescentada automaticamente após o nome definido no atributo download)
+
+            href=""
+                O href possibilita diversas funcionalidades de redirecionamento
+
+                Valores:
+                    #texto - Ao colocar o jogo da velha você está informando que está redirecionando o usuário para um local da página, se tiver redirecionando para uma parte da sua página que tenha um id informe o nome juntamente do jogo da velha
+
+                    link - Ao colocar uma url de outro website ou um caminho de arquivos você redireciona o usuário para outra página
+
+                    mailto:email - Aqui você pode montar prédefinições de envio de email redirecionando o usuário para o email dele com alguns campos já pré-formatados, exemplo: "mailto:someone@example.com"
+                        
+                        Observações: 
+
+                            Temos diversas possibilidades de configurações, segue as descrições com exemplos;
+
+                            Mandar um e-mail para vários destinatários.
+                            Exemplo: mailto:ramos@teste.br,rafael@teste2.br
+
+                            Quando acabamos de inserir a configuração de destinatário e queremos colocar mais uma definição, colocamos um ponto de interrogação (?) no final do último destinatário inserido
+                            
+                            Exemplos:
+
+                                mailto:ramos@teste.br,rafael@teste.br?cc=silva@teste.br
+                                
+                                mailto:ramos@teste.br,rafael@teste.br?cc=silva@teste.br,teste@teste.br
+                
+                                mailto:ramos@teste.br,rafael@teste.br?bcc=silva@teste.br
+                
+                                mailto:ramos@teste.br,rafael@teste.br?subject=Um título de email
+
+
+                            Mandar um e-mail como cópia para outro destinatário. cc= - serve para colocar um destinatário que receberá a cópia do email
+                            Exemplo: mailto:ramos@teste.br?cc=rafael@teste.br
+                            
+                            Se quiser inserir alguma outra configuração após ter colocado o cc ou bcc ou subject coloque o "e comercial" (&), de base segue a mesma lógica do interrogação (?).
+
+                            Mandar um e-mail com destinatário oculto. bcc= - serve para colocar um destinatário que receberá a cópia oculta do email
+                            Exemplo: mailto:ramos@teste.br?cc=rafael@teste.br&amp;bcc=silva@teste.br
+
+                            Mandar um e-mail com assunto. subject= - coloca um assunto no email
+                            Exemplo: mailto:ramos@teste.br?cc=rafael@teste.br&amp;bcc=silva@teste.br&amp;subject=Um título de email
+
+                            Mandar um e-mail com uma mensagem. body= - serve para colocar o corpo do email, a sua mensagem
+                            Exemplo: mailto:ramos@teste.br?cc=rafael@teste.br&amp;bcc=silva@teste.br&amp;subject=Um título de email&amp;body=Por algum motivo no site em que eu uso para estudar falava para não usar espaços e sim divisão 20 tipo%20isso, mas não sei qual o problema sendo que até o nonbody-space funciona&nbsp;aqui"
+
+                    tel:numero - exemplo: "+5511912345678"
+
+            target=""
+                Junto do atributo href define em qual janela o link deverá ser aberto
+                
+                Valores:
+                    _blank - Link criando outra janela
+                    _parent - Link que se estiver em um iframe redireciona na janela principal
+                    _self - Link que utiliza a página atual para ser alterada
+
+    <abbr>
+        Define uma abreviação ou um acrônimo
+
+        Atributos:
+
+            title=""
+
+                Dentro das aspas deve informar o significado do texto que foi reduzido
+
+    <address>
+        Define um endereço ou meios de contato
+
+    <area>
+        Define uma área destacada dentro de uma imagem, e estão sempre dentro da tagname map
+
+        Atributos:
+            
+            alt=""
+                Dentro das aspas deve ser informado o que representa aquela área que está sendo destacada
+
+            shape=""
+                Definirá como o atributo coords deverá efetuar o cálculo para a demarcação
+
+                Valores:
+                    rect - Para retângulos
+
+                    circle - Para círculos
+
+                    poly - Para polígonos
+
+            coords=""
+                Especificará coordenadas de alguns pontos dentro da imagem, tendo como base o topo esquerdo da imagem como ponto inicial 0, 0. Lembrando que as distâncias dos pontos da imagem estão medidas em pixel.
+            
+                Valroes:
+                    x1,y1,x2,y2	Especifica as coordenadas do topo esquerdo (x1,y1) e do baixo direito (x2, y2), definindo a diagonal do retângulo quando o shape="rect"
+
+                    x,y,raio Especifica a coordenada do centro de um círculo (x, y) e seu raio quando o shape="circle"
+
+                    x1,y1,x2,y2,..,xn,yn Especifica os pontos de ancora de uma imagem poligonal Especifica as coordenadas das arestas do polígono. Observação: Se o primeiro e o último par de coordenadas não forem iguais, o navegador adicionará o último par de coordenadas para fechar o polígono quando o shape="poly"
+
+            download=""
+                Este atributo juntamente do href faz o papel de baixar um conteúdo, o caminho do arquivo do conteúdo deverá estar descrito no href, e caso queira redefinir o nome do arquivo coloque dentro das aspas do atributo download o nome que gostaria que o arquivo tivesse (a extensão será acrescentada automaticamente após o nome definido no atributo download)
+
+            href=""
+                O href possibilita diversas funcionalidades de redirecionamento
+
+                Valores:
+                    #texto - Ao colocar o jogo da velha você está informando que está redirecionando o usuário para um local da página, se tiver redirecionando para uma parte da sua página que tenha um id informe o nome juntamente do jogo da velha
+
+                    link - Ao colocar uma url de outro website ou um caminho de arquivos você redireciona o usuário para outra página
+
+                    mailto:email - Aqui você pode montar prédefinições de envio de email redirecionando o usuário para o email dele com alguns campos já pré-formatados, exemplo: "mailto:someone@example.com"
+                        
+                        Observações: 
+
+                            Temos diversas possibilidades de configurações, segue as descrições com exemplos;
+
+                            Mandar um e-mail para vários destinatários.
+                            Exemplo: mailto:ramos@teste.br,rafael@teste2.br
+
+                            Quando acabamos de inserir a configuração de destinatário e queremos colocar mais uma definição, colocamos um ponto de interrogação (?) no final do último destinatário inserido
+                            
+                            Exemplos:
+
+                                mailto:ramos@teste.br,rafael@teste.br?cc=silva@teste.br
+                                
+                                mailto:ramos@teste.br,rafael@teste.br?cc=silva@teste.br,teste@teste.br
+                
+                                mailto:ramos@teste.br,rafael@teste.br?bcc=silva@teste.br
+                
+                                mailto:ramos@teste.br,rafael@teste.br?subject=Um título de email
+
+
+                            Mandar um e-mail como cópia para outro destinatário. cc= - serve para colocar um destinatário que receberá a cópia do email
+                            Exemplo: mailto:ramos@teste.br?cc=rafael@teste.br
+                            
+                            Se quiser inserir alguma outra configuração após ter colocado o cc ou bcc ou subject coloque o "e comercial" (&), de base segue a mesma lógica do interrogação (?).
+
+                            Mandar um e-mail com destinatário oculto. bcc= - serve para colocar um destinatário que receberá a cópia oculta do email
+                            Exemplo: mailto:ramos@teste.br?cc=rafael@teste.br&amp;bcc=silva@teste.br
+
+                            Mandar um e-mail com assunto. subject= - coloca um assunto no email
+                            Exemplo: mailto:ramos@teste.br?cc=rafael@teste.br&amp;bcc=silva@teste.br&amp;subject=Um título de email
+
+                            Mandar um e-mail com uma mensagem. body= - serve para colocar o corpo do email, a sua mensagem
+                            Exemplo: mailto:ramos@teste.br?cc=rafael@teste.br&amp;bcc=silva@teste.br&amp;subject=Um título de email&amp;body=Por algum motivo no site em que eu uso para estudar falava para não usar espaços e sim divisão 20 tipo%20isso, mas não sei qual o problema sendo que até o nonbody-space funciona&nbsp;aqui"
+
+                    tel:numero - exemplo: "+5511912345678"
+
+            target=""
+                Junto do atributo href define em qual janela o link deverá ser aberto
+                
+                Valores:
+                    _blank - Link criando outra janela
+                    _parent - Link que se estiver em um iframe redireciona na janela principal
+                    _self - Link que utiliza a página atual para ser alterada
+
+    <article>
+        Define um artigo, um texto que independente da página se completa e define um tema
+
+    <aside>
+        Define um tema paralelo, por exemplo: o site fala sobre como preparar comidas, mas em determinada parte do texto eu vou querer trazer uma curiosidade sobre o ingrediente, como tangencia o tema principal eu defino aquela área como aside.
+
+    <audio>
+        Cria uma ferramenta de áudio onde é possível clicar e rodar um áudio.
+        
+        Observações:
+            Caso queira disponibilizar diversos tipos de audios em formatos diferentes utilize a tagname source dentro da tagname audio.
+            
+            Descreva dentro da tagname audio um texto que deve aparecer caso o áudio não possa ser reproduzido por problemas com o link ou a própria extensão do arquivo
+
+        Atributos:
+            
+            controls="controls"
+                É um atributo booleano que quando informado gera automaticamente as seguintes funcionalidades:
+                    Faz uma caixa de player de som aparecer.
+                    Play - inicia o player de som ou continua caso tenha sido pausado.
+                    Pause - para o player de som.
+                    Seeking - controle de tempo do áudio.
+                    Volume - controla o volume variando de 0 a 100.
+                
+                Observação: Dependendo do navegador ele disponibiliza uma aba de mais funcionalidade, como velocidade de reprodução e download do audio
+
+            src=""
+                Deve informar o local do arquivo, seja uma url de um site ou um caminho de arquivos
+
+                Observação: caso vá inserir a tagname source dentro de audio não precisa informar src na tagname audio
+
+            autoplay="autoplay"
+                Faz o aúdio automaticamente ser inciado após o carregamento do elementos
+
+            loop="loop"
+                Faz o áudio entrar em loop, reiniciando automaticamente ao final do som
+
+            muted="muted"
+                Faz áudio começar com o som desligado
+
+            type=""
+                Valores comuns:
+                    audio/mpeg - carrega arquivos mp3
+                    audio/ogg - carrega arquivos ogg
+        
+    <base />
+        Define onde os src e href devem ter como base suas urls
+
+        href=""
+            Configura uma url
+
+        target=""
+            Junto do atributo href define em qual janela o link deverá ser aberto
+            
+            Valores:
+                _blank - Link criando outra janela
+                _parent - Link que se estiver em um iframe redireciona na janela principal
+                _self - Link que utiliza a página atual para ser alterada
+
+    <blockquote>
+        Define um bloco de citação, um conjunto de texto que está sendo citado de uma fonte externa
+        
+        Atributo:
+            cite=""
+
+                Dentro deste atributo deve ser informado de qual fonte foi retirado o texto
 
     <body>
         Dentro da tagname body deve ficar tudo o que você deseja que o usuário possa ver e interagir
+
+    <br />
+        A tagname br é responável pela quebra de linha, se ele for inserido no meio de um texto ele realiza a quebra de linha.
+
+        Obs: não deve ser usado para criar espaçamentos entre elementos e sim para quebra de linhas.
+
+    <button>
+
+        Botão clicável
+
+        Atributos:
+            disabled="disabled"
+
+            form="" - id do form que este botão deve se associar
+
+            formaction="" - para qual url o site deve enviar o formulário
+
+            formenctype=""
+                Valores:
+                    application/x-www-form-urlencoded
+                    multipart/form-data
+                    text/plain
+
+            formmethod=""
+                Valores:
+                    get
+                    post
+
+            formtarget=""
+                Se type="submit"
+                
+                Valores:
+                    _blank
+                    _self
+                    _parent
+                    framename
+
+            name=""
+
+            value=""
+
+            type=""
+                Valores:
+                    button
+                    reset
+                    submit
+
+            formnovalidate="formnovalidate"
+
+    <canvas>
+        Demarca uma área que será usada para uma representação gráfica, o que estiver aninhado nesta tagname só aparecerá se o navegador não suportar a tag
+
+    <caption>
+        Quando queremos adicionar um título para uma tabela utilizamos esta tagname, deve ficar aninhada na tagname table antes das criações de linha com a tagname tr
+
+        Exemplo:
+            <table>
+                <caption>Monthly savings</caption>
+                <tr>
+                    <th>Month</th>
+                    <th>Savings</th>
+                </tr>
+                <tr>
+                    <td>January</td>
+                    <td>$100</td>
+                </tr>
+                <tr>
+                    <td>February</td>
+                    <td>$50</td>
+                </tr>
+            </table>
+
+    <cite>
+        Citação de um nome, seja de um livro, poema, autor, música, filme, pintura etc...
+
+    <code>
+        Define um código
+
+    <datalist>
+        Define uma lista de dados pré-definidas que podem ser adicionadas à tagname intput para realizar uma recomendação de auto-preenchimento. Observação: O atributo id do elemento deve ser igual ao atributo list do elemento <input> (isso os une)
+
+        Atributos:
+            id=""
+
+        Exemplo:
+            <label for="browser">Choose your browser from the list:</label>
+            <input list="browsers" name="browser" id="browser">
+
+            <datalist id="browsers">
+                <option value="Edge">
+                <option value="Firefox">
+                <option value="Chrome">
+                <option value="Opera">
+                <option value="Safari">
+            </datalist>
+
+    <dl>, <dt>, <dd>
+        A tagname dl determina uma lista de dados, onde aninhado a esta deve ter um dt (titulo de dado) e um dd (descrição do dado),
+        Basicamente o dl delimita uma área que será utilizada como lista de descrição, onde deve possuir o dt para saber o que será descrito e um dd que deve possuir o conteudo de descrição referente ao dt
+
+    <del>
+        Marca uma texto que foi excluído pelo padrão de idioma. Observação: logo após a marcação de que o texto foi excluído utilizamos a tagname ins para indicar por qual texto substituimos o antigo.
+
+        Atributos:
+            cite=""
+                Deve referenciar uma url onde informa que o que foi excluído não deve mais ser utilizado
+
+            datetime=""
+                YYYY-MM-DDThh:mm:ssTZD	Especifica a data e o tempo de quando o texto foi alterado
+
+    <details>
+        Define uma área que deve ser minimizada e que caso seja clicada deve expandir e mostrar seu conteudo que foi aninhado. Utilize aninhado nesta tagname a tagname summary para criar um cabeçalho.
+
+        Atributos:
+            open="open"
+                Se definido deixa que o elemento inicie aberto
+
+    <dfn>
+        Marca uma palavra que será explicada na mesma linha.
+
+    <dialog>
+        Define uma caixa de texto para diálogo com o usuário
+
+    
+
+
+
+
+
+
+    <html>
+        Todo o conteudo da sua página que for em relação ao html deve ficar dentro desta tagname
+
+        Atributos:
+            
+            xmlns="http://www.w3.org/1999/xhtml"
+                
+                O validador de HTML em http://w3.org não reclama quando o xmlns atributo está ausente em um documento XHTML. Isso ocorre porque o namespace "xmlns=http://www.w3.org/1999/xhtml" é o padrão e será adicionado à tagname <html> mesmo que você não o inclua.
+
+            lang=""
+                Colocando a abreviação da sigla de um idioma você define que a sua página está com base em uma determinada linguagem, exemplos: pt-br (Português Brasileiro), en (Inglês), es (Espanhol), fr (Francês), etc...
+
+            dir=""
+                Define a direção em que o texto deve ser apresentado
+
+                Valores:
+                    ltr - esquerda para direita: formato de leitura ocidental
+                    rtl - direita para esquerda: formato de leitura oriental
+
+    <head>
+        O que estiver dentro da tagname head é responsável por ajustar as configurações do seu arquivo html, ajustando como os interpretadores devem manipular o seu site, quais arquivos o seu site deverá acessar, entre diversas outras coisas, mas o principal é que ele é o responsável pela gerencia do seu arquivo.
 
     <title>
         Dentro da tagname title fica o título do seu site, é o nome que aparece no Google quando você pesquisa um site e também o texto que fica na aba do seu navegador.
@@ -36,11 +435,68 @@ Tagnames:
                     ../_material/imagens/html/site_w3schools_title.png
             ]
 
+    <h1>, <h2>, <h3>, <h4>, <h5>, <h6>
+        Dentro da tagname h1 fica o título principal do seu site, é recomendável ter um h1 e apenas um por página do seu site. Já das tagnames h2 até h6 estes são títulos de menores importancias e que podem ser colocados diversas vezes, quanto maior o número menor a importância dele.
+
+    <p>
+        Dentro da tagname p fica o seu parágrafo
+
+    <div>
+        A tagname div não tem um papel definido, ela é em geral um divisor para agrupar um conjunto de tagnames
+
+    <meta />
+        A tagname meta junto de alguns atributos configura especificações para a página
+
+        Atributos:
+            
+            charset=""
+                Configura o padrão de caracteres que devem ser lidos da sua página
+
+                Valores:
+                    UTF-8 - Permite o padrão brasileiro de caracteres, como palavras com acentuações
+
+            name=""
+                Dentro das aspas você deve informar qual a configuração da tagname meta e então definir no content suas especificações
+
+                Valores:
+                    description - no content define a descrição da sua página, um breve texto que aparece como resumo nas pesquisas do Google deriva desta configuração
+                        [
+                            @@@ Imagem de exemplo: ../_material/imagens/html/aba_de_pesquisa_com_marcacoes.png
+                        ]
+
+                    keywords - no content deve informar palavras chaves que a sua página possui para poder ser melhor indexada nas pesquisas, separando cada palavra chave por vírgula, exemplo: "tutorial, html, programação"
+
+                    author - no content deve informar o autor da página, aqui é possível o programador responsável colocar o seu nome ou o da equipe/empresa, exemplo: "Rafael Ramos"
+
+                    viewport - no content deve ser informado qual o zoom em que o seu site deve começar nos mais diversos tipos de dispositivos, em grande parte dos casos o seguinte código fica no content: "width=device-width, initial-scale=1.0"
+                        A parte width=device-width define a largura da página para seguir a largura da tela do dispositivo (que varia dependendo do dispositivo).
+                        A parte initial-scale=1.0 define o nível de zoom inicial quando a página é carregada pela primeira vez pelo navegador.
+
+            http-equiv=""
+                Dentro das aspas você deve informar qual a configuração da tagname http-equiv e então definir no content suas especificações
+
+                Valores:
+                    refresh - no content define em quantos segundos a página deve atualizar ou enviar para outro site, exemplos: "100 ../index.html", "10"
+
+            content=""
+                Dentro das aspas informe um texto de acordo com a configuração do atributo name e http-equiv
+
+    <hr />
+        A tagname hr é responável pela quebra de sessão da página, ele cria uma linha horizontal.
+
+
+
+
+
+
+
+
+
+Atributos:
     
-
-
-
-
+    style=""
+        Dentro das aspas duplas você pode utilizar os métodos css para estilizar a sua tagname
+    
 
 
 
