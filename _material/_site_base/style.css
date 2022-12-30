@@ -5,12 +5,103 @@
 */
 
 
-* {
-    font-family: monospace;
-    font-weight: 500;
+/* 
+    ============ Instalação de fontes externas ============= 
+*/
+
+@font-face {
+    font-family: 'Noto_Sans_Mono';
+    src: url('fonts/noto_sans_mono/static/NotoSansMono/NotoSansMono-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
 }
 
-div, nav, main, footer {
+@font-face {
+    font-family: 'Noto_Sans_Mono';
+    src: url('fonts/noto_sans_mono/static/NotoSansMono/NotoSansMono-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto_Sans_Mono';
+    src: url('fonts/noto_sans_mono/static/NotoSansMono/NotoSansMono-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto_Sans_Mono';
+    src: url('fonts/noto_sans_mono/static/NotoSansMono/NotoSansMono-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto_Sans_Mono';
+    src: url('fonts/noto_sans_mono/static/NotoSansMono/NotoSansMono-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto_Sans_Mono';
+    src: url('fonts/noto_sans_mono/static/NotoSansMono/NotoSansMono-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto_Sans_Mono';
+    src: url('fonts/noto_sans_mono/static/NotoSansMono/NotoSansMono-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto_Sans_Mono';
+    src: url('fonts/noto_sans_mono/static/NotoSansMono/NotoSansMono-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto_Sans_Mono';
+    src: url('fonts/noto_sans_mono/static/NotoSansMono/NotoSansMono-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+    ========= Configurando genericamente as tagnames ===============
+*/
+
+* {
+    font-family: 'Noto_Sans_Mono', monospace;
+    font-weight: 400;
+    font-style: normal;
+    text-align: justify;
+    box-sizing: content-box;
+}
+
+div, nav, main, footer, header, article, aside, dt, figcaption {
     display: block;
 }
 
@@ -20,93 +111,202 @@ head, meta, link, title {
 
 html {
     display: block;
-    min-width: 100%;
-    min-height: 100%;
     position: relative;
 }
 
 body {
-    position: absolute;
-    top: 0px;
     display: block;
-    margin: 0px;
-    min-width: 100%;
-    min-height: 100%;
+    margin: 0em;
+    width: 100%;
+    min-height: 100vh;
+    font-size: 0.8em;
+    text-align: justify;
+    box-sizing: border-box;
+}
+
+main {
+    max-width: 100em;
+    margin: 0em auto 0em auto;
+    padding: 0.75em 1.5em 0.75em 1.5em;
 }
 
 p {
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-size: 0.45cm;
+    margin-inline-start: 0em;
+    margin-inline-end: 0em;
+    font-size: 1.3em;
+    text-indent: 0.75em;
 }
 
 h1 {
     display: block;
-    font-size: 0.8cm;
+    font-size: 2.4em;
     margin-block-start: 0.67em;
     margin-block-end: 0.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+    margin-inline-start: 0em;
+    margin-inline-end: 0em;
     font-weight: 900;
 }
 
 h2 {
     display: block;
-    font-size: 0.75cm;
+    font-size: 2.2em;
     margin-block-start: 0.83em;
     margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+    margin-inline-start: 0em;
+    margin-inline-end: 0em;
     font-weight: 900;
 }
 
 h3 {
     display: block;
-    font-size: 0.7cm;
+    font-size: 2em;
     margin-block-start: 1em;
     margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+    margin-inline-start: 0em;
+    margin-inline-end: 0em;
     font-weight: 900;
 }
 
 h4 {
     display: block;
-    font-size: 0.65cm;
+    font-size: 1.8em;
     margin-block-start: 1.33em;
     margin-block-end: 1.33em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+    margin-inline-start: 0em;
+    margin-inline-end: 0em;
     font-weight: 900;
 }
 
 h5 {
     display: block;
-    font-size: 0.6cm;
+    font-size: 1.6em;
     margin-block-start: 1.67em;
     margin-block-end: 1.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+    margin-inline-start: 0em;
+    margin-inline-end: 0em;
     font-weight: 900;
 }
 
 h6 {
     display: block;
-    font-size: 0.5cm;
+    font-size: 1.4em;
     margin-block-start: 2.33em;
     margin-block-end: 2.33em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+    margin-inline-start: 0em;
+    margin-inline-end: 0em;
     font-weight: 900;
 } 
 
 h1, h2, h3, h4, h5, h6, p
 {
-    padding: 0px 8px 0px 8px;
+    padding: 0em 0.6em 0em 0.6em;
+    text-align: justify;
 }
+
+a:link {
+    color: rgb(0, 0, 238);
+    text-decoration: underline;
+    cursor: pointer;
+}
+a:visited {
+    color: rgb(255, 0, 0);
+    text-decoration: underline;
+    cursor: pointer;
+}
+a:link:active, a:visited:active {
+    color: rgb(85, 26, 139);
+}
+
+span {
+    display: inline;
+}
+
+ol {
+    display: block;
+    list-style-type: decimal;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0em;
+    margin-inline-end: 0em;
+    padding-inline-start: 3em;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0em;
+    margin-inline-end: 0em;
+    padding-inline-start: 3em;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+dl {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0em;
+    margin-inline-end: 0em;
+}
+
+dd {
+    display: block;
+    margin-inline-start: 3em;
+}
+
+strong {
+    font-weight: 700;
+}
+
+em {
+    font-style: italic;
+}
+
+mark {
+    background-color: rgb(255, 255, 0);
+    color: rgb(0, 0, 0);
+    padding: 0em 0.25em 0em 0.25em;
+}
+
+small {
+    font-size: 0.7em;
+}
+
+sub {
+    vertical-align: -0.25em;
+    font-size: 0.7em;
+}
+
+sup {
+    vertical-align: 0.25em;
+    font-size: 0.7em;
+}
+
+figure {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 3.13em;
+    margin-inline-end: 3.13em;
+}
+
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+
+
+
+
 
 
 
@@ -119,109 +319,138 @@ h1, h2, h3, h4, h5, h6, p
 :root {
     --cor_z0: rgb(222, 222, 222);
     --cor_z1: rgb(45, 45, 45);
-    
+    --cor_z2: rgb(255, 255, 255);
+    --cor_z3: rgb(0, 0, 0);
+
     --cor_a1: #0600a1;
     --cor_a2: #160cfc;
-    --cor_a3: #0800cd;
-    --cor_a4: #050081;
+    --cor_a3: #00faff;
+    --cor_a4: #c900ff;
     --cor_a5: #040060;
-    
-    --cor_b1: #00976d;
-    --cor_b2: #00fbb6;
-    --cor_b3: #00c68f;
-    --cor_b4: #007958;
-    --cor_b5: #005a41;
-    
-    --cor_c1: #8d0097;
-    --cor_c2: #eb01fb;
-    --cor_c3: #b900c6;
-    --cor_c4: #710079;
-    --cor_c5: #54005a;
+    --cor_a6: #7fffd4;
 }
 
 
+* {
+    text-shadow: 
+        0.05em 0em 0.05em var(--cor_z2), 
+        0em 0.05em 0.05em var(--cor_z2), 
+        -0.05em 0em 0.05em var(--cor_z2), 
+        0em -0.05em 0.05em var(--cor_z2)
+    ;
+}
 
 html, body {
     background-color: var(--cor_z0);
 }
 
-p {
-    color: var(--cor_a1);
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: var(--cor_z1);
+main {
+    background-color: var(--cor_z2) ;
+    box-shadow: 0.08em 0.08em 0.24em var(--cor_z1);
 }
 
 p, h1, h2, h3, h4, h5, h6 {
-    text-shadow: 1px 0px 1px var(--cor_z0), 0px 1px 1px var(--cor_z0), -1px 0px 1px var(--cor_z0), 0px -1px 1px var(--cor_z0);
+    color: var(--cor_a5);
+}
+
+a:link {
+    color: var(--cor_a2);
+}
+a:visited {
+    color: var(--cor_z3);
+}
+a:link:active, a:visited:active {
+    color: var(--cor_a4);
+}
+
+mark {
+    background-color: var(--cor_a3);
+    color: var(--cor_a5);
+}
+
+nav {
+    background-color: var(--cor_a6);
 }
 
 
 
 
+
+
+/* 
+    ========== Classes montadas para exemplos ===================
+*/
 
 .bloco_cor_a1 {
     background-color: var(--cor_a1);
-    padding: 10px;
+    padding: 0.75em;
 }
 .bloco_cor_a2 {
     background-color: var(--cor_a2);
-    padding: 10px;
+    padding: 0.75em;
 }
 .bloco_cor_a3 {
     background-color: var(--cor_a3);
-    padding: 10px;
+    padding: 0.75em;
 }
 .bloco_cor_a4 {
     background-color: var(--cor_a4);
-    padding: 10px;
+    padding: 0.75em;
 }
 .bloco_cor_a5 {
     background-color: var(--cor_a5);
-    padding: 10px;
+    padding: 0.75em;
 }
 
-.bloco_cor_b1 {
-    background-color: var(--cor_b1);
-    padding: 10px;
+.hyperlink_nao_visitado {
+    color: var(--cor_a2);
+    text-decoration: underline;
+    cursor: pointer;
 }
-.bloco_cor_b2 {
-    background-color: var(--cor_b2);
-    padding: 10px;
+.hyperlink_visitado {
+    color: var(--cor_z3);
+    text-decoration: underline;
+    cursor: pointer;
 }
-.bloco_cor_b3 {
-    background-color: var(--cor_b3);
-    padding: 10px;
-}
-.bloco_cor_b4 {
-    background-color: var(--cor_b4);
-    padding: 10px;
-}
-.bloco_cor_b5 {
-    background-color: var(--cor_b5);
-    padding: 10px;
+.hyperlink_pressionado {
+    color: var(--cor_a4);
+    text-decoration: underline;
+    cursor: pointer;
 }
 
-.bloco_cor_c1 {
-    background-color: var(--cor_c1);
-    padding: 10px;
+.conteiner_de_img {
+    overflow: auto;
 }
-.bloco_cor_c2 {
-    background-color: var(--cor_c2);
-    padding: 10px;
+
+
+
+
+
+
+
+
+
+/* 
+    ============= Area de testes ===================
+*/
+
+#corpo {
+    position: relative;
 }
-.bloco_cor_c3 {
-    background-color: var(--cor_c3);
-    padding: 10px;
+
+#corpo header {
+    padding: 0.5em;
+    background-color: var(--cor_z1);
+    background-image: linear-gradient(0deg, var(--cor_a5) 10%, var(--cor_a2) 100%);
 }
-.bloco_cor_c4 {
-    background-color: var(--cor_c4);
-    padding: 10px;
+#corpo footer {
+    padding: 0.5em;
+    background-color: var(--cor_z1);
+    background-image: linear-gradient(0deg, var(--cor_a5) 10%, var(--cor_a2) 100%);
 }
-.bloco_cor_c5 {
-    background-color: var(--cor_c5);
-    padding: 10px;
-}
+
+
+
+
 
 

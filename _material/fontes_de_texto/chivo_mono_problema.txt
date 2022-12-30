@@ -1,0 +1,3 @@
+Problema ao escrever: 'offici'
+
+O que acontece: o 'fi' faz alguma configuração que junta ambos em apenas 1 espaçamento

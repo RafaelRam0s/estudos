@@ -2,23 +2,89 @@
 
 
 
+Site que fala sobre fontes:
+    https://fonts.google.com/knowledge/using_type/language_support_in_fonts
+
+    Tipos de format para o font-face:
+        opentype (otf)
+        truetype (ttf)
+        embedded-opentype
+        truetype-aat
+        svg
+
+    Teste para averiguar a fonte:
+        aaabacadaeafagahajakalamanaoapaqarasatauavaxawayaza
+
+        Observação: Ainda é preciso ver as combinações com outras letras, letras maiúsculas, números e acentos
+
+
+
 Configuração padrão do style nos navegadores:
 
     [@@@ pesquisar]
 
 
 
+Como fazer o efeito de degradê nas cores:
+    linear-gradient(numero_angular_de_0_a_360deg, color1 porcentagem_da_presenca_da_cor1%, color2 porcentagem_da_presenca_da_cor2%, ..., colorn porcentagem_da_presenca_da_corn%)
+
+    linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,0,0,1) 50%, rgb(0, 255, 0) 100%)
 
 
 
+Medidas de tamanho:
+    Medidas Absolutas:
+        cm (centimetro), mm (milimetro), in (polegada), px (pixel), pt (ponto), pc (paica)
+
+        Observação: as medidas absolutas podem variar de acordo com o dispositivo causando incoerências indesejadas.
+        Observação 2: pt e pc são utilizados para papel e não recomendados para computadores
+
+    Medidas Relativas:
+        em (tamanho atual da fonte com relação ao m maiúsculo), ex (altura x de uma fonte), rem (relativo à fonte configurada no body), vw (largura da tela), vh (altura da tela), %
+
+    Observação: O W3C recomenda o uso de px e de em
 
 
 
+Seletores:
+    # = id
+    . = class
+    > = apenas filhos diretos herdam
+    + = apenas o irmão adjacente posterior
+    ~ = os irmãos adjacentes gerais posteriores herdam
+
+    : = pseudo-classe
+    :: = pseudo-elemento
 
 
 
+Pseudo-Classes:
+
+    :hover - evento ativado enquanto o mouse estiver no elemento
+
+    :active - quando clicar em <a href="#"> enquanto estiver pressionado o evento é liberado
 
 
+ 
+Pseudo-Elementos:
 
+    ::after - após o conteúdo do elemento realiza uma adição
+        Exemplo:
+            span::after {
+                content: ' "Texto adicionado pelo after. Agora uma tagname no after para <span>teste</span>"';
+                opacity: 0.5;
+            }
 
+        Observação: o after para que possa ser aplicado precisa que o atributo content seja definido.
+
+    ::before - antes do conteúdo do elemento realiza uma adição
+        Exemplo:
+            span::after {
+                content: '"Texto adicionado pelo before. Agora uma tagname no before para <span>teste</span>" ';
+                opacity: 0.5;
+            }
+
+        Observação: o before para que possa ser aplicado precisa que o atributo content seja definido.
+
+    
 
