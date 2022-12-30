@@ -7,9 +7,9 @@
     <meta name="keywords" content="exemplos, html, css, preferencias, site" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <link rel="license" href="../../LICENSE">
-    <link rel="icon" href="icone_logo_r_16px.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="license" href="./../../LICENSE">
+    <link rel="icon" href="./midia/icones/icone_logo_r_16px.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css" />
     
     <title>Modelo de site html</title>
 </head>
@@ -18,13 +18,12 @@
     <div id="corpo">
         <header>
             <div>
-                <h2>Cabeçalho</h2>
+                <picture>
+                    <source media="(max-width: 600px)" srcset="./midia/imagens/logo_rancode_pq.png" width="100" height="50" />
+                    <img src="./midia/imagens/logo_rancode_md.png" alt="Logo Rancode" width="120" height="60" />
+                </picture>
             </div>            
-            <div>
-                <nav>
-                    <h2>Links de navegação</h2>
-                </nav>
-            </div>
+            
         </header>
 
         <main>
@@ -116,7 +115,7 @@
                         
                         <p>Texto <small>Pequeno</small></p>
 
-                        <p>Texto <del>deletado</del> e <ins>Inserido</ins></p>
+                        <p>Texto <del>deletado</del> e <ins>inserido</ins></p>
 
                         <p>Texto <sub>subscrito</sub> e <sup>sobrescrito</sup></p>
 
@@ -129,22 +128,71 @@
                     <div>
                         <p>Imagem:</p>
 
-                        <figure class="conteiner_de_img">
-                            <picture>
-                                <source media="(max-width: 600px)" srcset="imagem_conceitual_paleta_de_cores_01_pq.png" width="300" height="300" />
-                                <img src="imagem_conceitual_paleta_de_cores_01.png" alt="Triangulos de diversos tamanhos e cores" width="810" height="603" />
-                            </picture>
-                            
-                            <figcaption>Imagem com proporção original de 810x603px</figcaption>
-                        </figure>
+                        <div>
+
+                            <figure class="conteiner_de_midia">
+                                <picture>
+                                    <source media="(max-width: 600px)" srcset="./midia/imagens/imagem_conceitual_paleta_de_cores_01_pq.png" width="300" height="300" />
+                                    <img src="./midia/imagens/imagem_conceitual_paleta_de_cores_01.png" alt="Triangulos de diversos tamanhos e cores" width="810" height="603" />
+                                </picture>
+                                
+                                <figcaption>Imagem com proporção original de 810x603px</figcaption>
+                            </figure>
+
+                        </div>
                         
                         <p>Áudio:</p>
 
+                        <div class="conteiner_de_midia">
+                            <audio controls>
+                                <source src="./../audios/musica_de_jogo.mp3" type="audio/mpeg">
+                                <source src="./../audios/musica_de_jogo.ogg" type="audio/ogg">
+                                Seu navegador não suporta os arquivos de áudio
+                            </audio>
+                        </div>
+
                         <p>Vídeo:</p>
+
+                        <p>[@@@ Adicionar vídeo]</p>
 
                         <p>Iframe:</p>
 
+                        <div class="conteiner_de_iframe_youtube">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/u9NE0jInb_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
 
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Referências textuais:</h3>
+
+                    <div>
+                        <p>- Endereços de contato:</p>
+                        
+                        <address>
+                            <a href="https://github.com/RafaelRam0s" target="_blank" rel="nofollow">[@@@ Colocar logo do github] Github</a>
+                            <br />
+                            <a href="https://www.instagram.com/rafael6ramos/" target="_blank" rel="nofollow">[@@@ Colocar logo do instagram] Instagram</a>
+                        </address>
+
+                        <p>- Texto para <abbr title="Abreviation">abbr</abbr></p>
+
+                        <blockquote cite="https://www.w3schools.com/tags/tag_blockquote.asp">
+                            Bloco de referencia textual Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse porro ratione enim molestiae cupiditate perferendis natus tempora deserunt alias doloremque assumenda modi reiciendis pariatur aut, commodi voluptatibus odit sapiente eligendi?
+                        </blockquote>
+
+                        <p>- Parágrafo com <q cite="https://www.w3schools.com/tags/tag_q.asp">referencia textual em linha</q></p>
+
+                        <p>- Parágrafo com citação à <cite>W3Schools</cite></p>
+
+                        <pre>
+                            - Texto pré formatado
+                        </pre>
+
+                        <p>- Parágrafo que marca um elemento como o elemento que será explicado durante o texto atual: <dfn>dfn</dfn>.</p>
+                        
+                        <p>- Parágrafo que informa um código: <code>&lt;code&gt;</code></p>
                     </div>
                 </section>
                     
@@ -161,8 +209,8 @@
         </main>
         
         <footer>
-            <div>
-                <h2>Rodapé</h2>
+            <div id="rodape">
+                <p>Site criado por Rafael Ramos da Silva com a finalidade de ter um layout padrão</p>
             </div>
         </footer>
     </div>

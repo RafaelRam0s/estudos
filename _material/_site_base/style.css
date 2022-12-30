@@ -4,6 +4,23 @@
     Este arquivo é uma folha de estilo personalizada com as preferências do Ramos, visando principalmente o Chrome 
 */
 
+/* 
+Formatação da logo Rancode
+
+<div style="
+    width: 250px;
+    height: auto;
+    background-color: #0600a1;
+    margin: auto;
+    padding: 0px;
+    text-align: center;
+    font-size: 4em;
+    border: 0.2em solid white;
+    box-sizing: border-box;
+">
+    <span style="text-shadow: none; color: white; font-weight: 700;">Rancode</span>
+</div>
+*/
 
 /* 
     ============ Instalação de fontes externas ============= 
@@ -99,6 +116,8 @@
     font-style: normal;
     text-align: justify;
     box-sizing: content-box;
+    font-size: 14px;
+    line-height: 32px;
 }
 
 div, nav, main, footer, header, article, aside, dt, figcaption {
@@ -116,95 +135,89 @@ html {
 
 body {
     display: block;
-    margin: 0em;
+    margin: 0px;
     width: 100%;
     min-height: 100vh;
-    font-size: 0.8em;
+    font-size: 16px;
     text-align: justify;
     box-sizing: border-box;
 }
 
 main {
-    max-width: 100em;
-    margin: 0em auto 0em auto;
-    padding: 0.75em 1.5em 0.75em 1.5em;
+    max-width: 1200px;
+    margin: 0px auto 0px auto;
+    padding: 10px 16px 10px 16px;
 }
 
 p {
     display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0em;
-    margin-inline-end: 0em;
-    font-size: 1.3em;
-    text-indent: 0.75em;
+    margin-block-start: 16px;
+    margin-block-end: 16px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: 14px;
+    text-indent: 10px;
 }
 
 h1 {
     display: block;
-    font-size: 2.4em;
-    margin-block-start: 0.67em;
-    margin-block-end: 0.67em;
-    margin-inline-start: 0em;
-    margin-inline-end: 0em;
-    font-weight: 900;
+    font-size: 20px;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 800;
 }
 
 h2 {
     display: block;
-    font-size: 2.2em;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0em;
-    margin-inline-end: 0em;
-    font-weight: 900;
+    font-size: 19px;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 800;
 }
 
 h3 {
     display: block;
-    font-size: 2em;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0em;
-    margin-inline-end: 0em;
-    font-weight: 900;
+    font-size: 18px;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 800;
 }
 
 h4 {
     display: block;
-    font-size: 1.8em;
-    margin-block-start: 1.33em;
-    margin-block-end: 1.33em;
-    margin-inline-start: 0em;
-    margin-inline-end: 0em;
-    font-weight: 900;
+    font-size: 17px;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 800;
 }
 
 h5 {
     display: block;
-    font-size: 1.6em;
-    margin-block-start: 1.67em;
-    margin-block-end: 1.67em;
-    margin-inline-start: 0em;
-    margin-inline-end: 0em;
-    font-weight: 900;
+    font-size: 16px;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 800;
 }
 
 h6 {
     display: block;
-    font-size: 1.4em;
-    margin-block-start: 2.33em;
-    margin-block-end: 2.33em;
-    margin-inline-start: 0em;
-    margin-inline-end: 0em;
-    font-weight: 900;
+    font-size: 15px;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 800;
 } 
-
-h1, h2, h3, h4, h5, h6, p
-{
-    padding: 0em 0.6em 0em 0.6em;
-    text-align: justify;
-}
 
 a:link {
     color: rgb(0, 0, 238);
@@ -227,21 +240,21 @@ span {
 ol {
     display: block;
     list-style-type: decimal;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0em;
-    margin-inline-end: 0em;
-    padding-inline-start: 3em;
+    margin-block-start: 16px;
+    margin-block-end: 16px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 48px;
 }
 
 ul {
     display: block;
     list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0em;
-    margin-inline-end: 0em;
-    padding-inline-start: 3em;
+    margin-block-start: 16px;
+    margin-block-end: 16px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 48px;
 }
 
 li {
@@ -251,15 +264,15 @@ li {
 
 dl {
     display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0em;
-    margin-inline-end: 0em;
+    margin-block-start: 16px;
+    margin-block-end: 16px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 
 dd {
     display: block;
-    margin-inline-start: 3em;
+    margin-inline-start: 48px;
 }
 
 strong {
@@ -273,29 +286,29 @@ em {
 mark {
     background-color: rgb(255, 255, 0);
     color: rgb(0, 0, 0);
-    padding: 0em 0.25em 0em 0.25em;
+    padding: 0px 5px 0px 5px;
 }
 
 small {
-    font-size: 0.7em;
+    font-size: 10px;
 }
 
 sub {
-    vertical-align: -0.25em;
-    font-size: 0.7em;
+    vertical-align: -5px;
+    font-size: 10px;
 }
 
 sup {
-    vertical-align: 0.25em;
-    font-size: 0.7em;
+    vertical-align: 5px;
+    font-size: 10px;
 }
 
 figure {
     display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 3.13em;
-    margin-inline-end: 3.13em;
+    margin-block-start: 16px;
+    margin-block-end: 16px;
+    margin-inline-start: 12px;
+    margin-inline-end: 12px;
 }
 
 img {
@@ -303,7 +316,66 @@ img {
     overflow: clip;
 }
 
+audio {
+    width: 300px;
+    height: 54px;
+}
+    audio:not([controls]) {
+        display: none !important;
+    }
 
+address {
+    display: block;
+    font-style: italic;
+}
+
+abbr {
+    display: inline;
+}
+    abbr[title] {
+        text-decoration: underline dotted;
+    }
+
+blockquote {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+q {
+    display: inline;
+}
+
+    q::before {
+        content: open-quote;
+    }
+
+    q::after {
+        content: close-quote;
+    }
+
+cite {
+    font-style: italic;
+}
+
+pre {
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 16px 0px 16px 0px;
+    overflow: auto;
+    max-height: 50vh;
+}
+
+dfn {
+    font-style: italic;
+}
+
+code {
+    font-family: monospace;
+}
 
 
 
@@ -333,10 +405,10 @@ img {
 
 * {
     text-shadow: 
-        0.05em 0em 0.05em var(--cor_z2), 
-        0em 0.05em 0.05em var(--cor_z2), 
-        -0.05em 0em 0.05em var(--cor_z2), 
-        0em -0.05em 0.05em var(--cor_z2)
+        1px 0px 1px var(--cor_z2), 
+        0px 1px 1px var(--cor_z2), 
+        -1px 0px 1px var(--cor_z2), 
+        0px -1px 1px var(--cor_z2)
     ;
 }
 
@@ -346,7 +418,7 @@ html, body {
 
 main {
     background-color: var(--cor_z2) ;
-    box-shadow: 0.08em 0.08em 0.24em var(--cor_z1);
+    box-shadow: 2px 2px 8px var(--cor_z1);
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -377,29 +449,34 @@ nav {
 
 
 
+
+
+
+
+
 /* 
     ========== Classes montadas para exemplos ===================
 */
 
 .bloco_cor_a1 {
     background-color: var(--cor_a1);
-    padding: 0.75em;
+    padding: 10px;
 }
 .bloco_cor_a2 {
     background-color: var(--cor_a2);
-    padding: 0.75em;
+    padding: 10px;
 }
 .bloco_cor_a3 {
     background-color: var(--cor_a3);
-    padding: 0.75em;
+    padding: 10px;
 }
 .bloco_cor_a4 {
     background-color: var(--cor_a4);
-    padding: 0.75em;
+    padding: 10px;
 }
 .bloco_cor_a5 {
     background-color: var(--cor_a5);
-    padding: 0.75em;
+    padding: 10px;
 }
 
 .hyperlink_nao_visitado {
@@ -418,12 +495,26 @@ nav {
     cursor: pointer;
 }
 
-.conteiner_de_img {
+.conteiner_de_midia {
     overflow: auto;
+    max-height: 50vh;
+    max-width: 100%;
 }
 
+.conteiner_de_iframe_youtube {
+    background-color: var(--cor_z0);
+    margin: 0px 0px 0px 0px;
+    padding: 16px 16px 50% 16px;
+    position: relative;
 
-
+}
+.conteiner_de_iframe_youtube > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
 
 
 
@@ -439,17 +530,29 @@ nav {
 }
 
 #corpo header {
-    padding: 0.5em;
+    padding: 8px 8px 8px 8px;
     background-color: var(--cor_z1);
     background-image: linear-gradient(0deg, var(--cor_a5) 10%, var(--cor_a2) 100%);
 }
+
 #corpo footer {
-    padding: 0.5em;
-    background-color: var(--cor_z1);
-    background-image: linear-gradient(0deg, var(--cor_a5) 10%, var(--cor_a2) 100%);
+    background-color: var(--cor_z0);
+    background-image: linear-gradient(0deg, var(--cor_a2) 10%, var(--cor_a5) 100%);
+    opacity: 0.85;
+    padding: 1px 1px 1px 1px;
 }
 
-
+#corpo footer #rodape {
+    min-width: 300px;
+    max-width: 80%;
+    margin: auto;
+}
+#corpo footer #rodape > p {
+    color: var(--cor_z1);
+    text-align: center;
+    font-weight: 700;
+    margin: 5px 0px 5px 0px;
+}
 
 
 
