@@ -16,15 +16,70 @@
 <body>
 
     <div id="corpo">
-        <header>
+        
+        <nav id="_menu_links">
             <div>
-                <picture>
-                    <source media="(max-width: 600px)" srcset="./midia/imagens/logo_rancode_pq.png" width="100" height="50" />
-                    <img src="./midia/imagens/logo_rancode_md.png" alt="Logo Rancode" width="120" height="60" />
-                </picture>
-            </div>            
-            
+                <div id="_button_menu_links_close" onclick="
+                    document.querySelectorAll('#_menu_links > div')[0].style.display = 'none'; 
+                    document.querySelectorAll('header')[0].style.display = 'block';
+                ">
+                        <div>
+                            [@@@ Botão fechar aba]
+                        </div>
+                </div>
+                <ul>
+                    <li>
+                        <a href="./index.html">Menu principal</a>
+                    </li>
+                    <li>
+                        <a href="#">Site 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Site 2</a>
+                    </li>
+                    <li>
+                        <span>Aba de categorias 1</span>
+                        <ul>
+                            <li>
+                                <a href="#">Site 3</a>
+                            </li>
+                            <li>
+                                <a href="#">Site 4</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Site 5</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <header class="max_height_auto">
+
+            <div id="cabecalho">
+                <div>
+                    <a href="./index.html">
+                        <div class="logo_em_css">
+                            RanCode
+                        </div>
+                    </a>
+                </div>
+                <div class="display_none_600">
+                    <p>Hello World!</p>
+                </div>
+                <div>
+                    <div id="_header_links" onclick="
+                        document.querySelectorAll('header')[0].style.display = 'none';
+                        document.querySelectorAll('#_menu_links > div')[0].style.display = 'block'; 
+
+                    ">
+                        [@@@ Bloco de links]
+                    </div>
+                </div>
+            </div>
         </header>
+
+        
 
         <main>
             <div>
@@ -156,10 +211,12 @@
                         <p>[@@@ Adicionar vídeo]</p>
 
                         <p>Iframe:</p>
-
-                        <div class="conteiner_de_iframe_youtube">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/u9NE0jInb_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
+                        
+                        <!-- 
+                            <div class="conteiner_de_iframe_youtube">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/u9NE0jInb_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div> 
+                        -->
 
                     </div>
                 </section>
@@ -210,7 +267,7 @@
         
         <footer>
             <div id="rodape">
-                <p>Site criado por Rafael Ramos da Silva com a finalidade de ter um layout padrão</p>
+                <h2>Rodapé</h2>
             </div>
         </footer>
     </div>
