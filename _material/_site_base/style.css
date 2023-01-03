@@ -339,7 +339,8 @@ abbr {
     display: inline;
 }
     abbr[title] {
-        text-decoration: underline dotted;
+        text-decoration: underline;
+        cursor: help;
     }
 
 blockquote {
@@ -465,7 +466,7 @@ button:hover {
 
 
 /* 
-    ========== Classes montadas para exemplos ===================
+    ========== Classes montadas ===================
 */
 
 .bloco_cor_a1 {
@@ -486,6 +487,14 @@ button:hover {
 }
 .bloco_cor_a5 {
     background-color: var(--cor_a5);
+    padding: 10px;
+}
+.bloco_cor_a6 {
+    background-color: var(--cor_a6);
+    padding: 10px;
+}
+.bloco_cor_a7 {
+    background-color: var(--cor_a7);
     padding: 10px;
 }
 
@@ -533,21 +542,6 @@ button:hover {
         0px -1px 1px var(--cor_z2)
     ;
 }
-
-@media (max-width: 600px) {
-    .display_none_600 {
-        display: none;
-    }
-}
-
-
-
-
-
-
-/* 
-    ============= Area de testes ===================
-*/
 
 .logo_em_css {
     font-size: 20px;
@@ -667,29 +661,75 @@ nav#_menu_links {
             transition: max-height 0.05s linear 0s;
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#corpo > footer#rodape  {
+#corpo > footer#rodape > div  {
     background-color: var(--cor_a1);
-    /* background-image: linear-gradient(0deg, var(--cor_a2) 10%, var(--cor_a5) 100%); */
+    color: var(--cor_z2);
     box-shadow: 0px -2px 1px rgba(0, 0, 0, 0.5);
     padding: 1px 1px 1px 1px;
     opacity: 0.9;
 }
+#corpo > footer#rodape > div p {
+    color: var(--cor_z2);
+    margin: 5px 0px 5px 0px;
+}
+#corpo > footer#rodape > div a {
+    color: var(--cor_z0);
+    text-decoration: none;
+}
+#corpo > footer#rodape > div a:hover {
+    color: var(--cor_z2);
+    text-decoration: underline;
+}
 
 
+#corpo > footer#rodape > div > div#area_informacoes {
+    width: 100%;
+    max-width: 1200px;
+    padding: 5px 10px 5px 10px;
+    margin: 0px auto 0px auto;
+    box-sizing: border-box;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#corpo > footer#rodape > div > div#area_informacoes > div {
+    width: 50%;
+}
+
+#corpo > footer#rodape > div > div#area_copyright {
+    width: 100%;
+    max-width: 1200px;
+    padding: 5px 10px 5px 10px;
+    margin: 0px auto 0px auto;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: 800;
+}
+#corpo > footer#rodape > div > div#area_copyright p {
+    text-align: center;
+    margin: 0px;
+    font-weight: 800;
+}
+
+
+@media (max-width: 600px) {
+    .display_none_600px {
+        display: none;
+    }
+
+    #corpo > footer#rodape > div > div#area_informacoes {
+        flex-direction: column;
+    }
+    #corpo > footer#rodape > div > div#area_informacoes > div {
+        width: 100%;
+        text-align: center;
+    }
+    #corpo > footer#rodape > div p {
+        text-align: center;
+    }
+}
 
