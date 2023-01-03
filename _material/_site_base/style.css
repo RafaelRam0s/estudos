@@ -555,6 +555,7 @@ button:hover {
 
 #corpo {
     position: relative;
+    /* display: none; */
 }
 
 #corpo > header#cabecalho {
@@ -576,7 +577,8 @@ button:hover {
         flex-wrap: nowrap;
         justify-content: space-between;
         align-items: center;
-        padding: 1px 15px 1px 15px;
+        padding: 10px 15px 10px 15px;
+        transition: padding 0.1s linear 0s;
         
         margin: 5px auto 5px auto;
         max-width: 1200px;
@@ -732,4 +734,42 @@ nav#_menu_links {
         text-align: center;
     }
 }
+
+div#preloader {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    z-index: 9;
+    transition: opacity 0.5s linear 0s;
+}
+div#preloader > div {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #00ffaa;
+    z-index: 9;
+    padding: 12px;
+}
+
+@keyframes animacaoRodando {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+.animacao_rodando {
+    animation-name: animacaoRodando;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+
+
+
+
 

@@ -1,5 +1,19 @@
 
 
+(function configurarPaginaNoPreloader() {
+    if (document.querySelectorAll('div#preloader')[0] != undefined){
+        document.addEventListener(
+            'load',
+            function() {
+                setTimeout(() => {
+                    document.querySelectorAll('div#corpo')[0].style.display = 'block';
+                    document.querySelectorAll('div#preloader')[0].style.opacity = 0;
+                }, 500);
+            },
+            true
+        );
+    }
+})();
 
 (function configurarMenuDeLinks() {
                 
@@ -27,5 +41,18 @@
 
 })();
 
-
+(function configurarAnimacaoDoHeader() {
+    window.addEventListener(
+        'scroll',
+        function() {
+            if (window.scrollY >= 1)
+            {
+                document.querySelectorAll('header#cabecalho > div')[0].style.padding = '1px 15px 1px 15px';
+            } else if (window.scrollY < 1) {
+                document.querySelectorAll('header#cabecalho > div')[0].style.padding = '10px 15px 10px 15px';
+            }
+        },
+        true
+    );
+})();
 
