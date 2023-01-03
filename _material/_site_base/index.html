@@ -17,16 +17,38 @@
 
     <div id="corpo">
         
+        <header id="cabecalho">
+            <div>
+                <div>
+                    <a href="./index.html">
+                        <div class="logo_em_css">
+                            RanCode
+                        </div>
+                    </a>
+                </div>
+
+                <div class="display_none_600">
+                    <span class="mensagem_menu">Hello World!</span>
+                </div>
+
+                <div id="_abrir_menu_links">
+                    <button type="button" onclick="
+                        document.getElementById('_menu_links').style.display = 'block';
+                        setTimeout(() => {document.getElementById('_menu_links').style.maxHeight = '80vh';}, 100);
+                    ">[@@@ Abrir links]</button>
+                </div>
+            </div>
+        </header>
+
         <nav id="_menu_links">
             <div>
-                <div id="_button_menu_links_close" onclick="
-                    document.querySelectorAll('#_menu_links > div')[0].style.display = 'none'; 
-                    document.querySelectorAll('header')[0].style.display = 'block';
-                ">
-                        <div>
-                            [@@@ Botão fechar aba]
-                        </div>
+                <div id="_fechar_menu_links">
+                    <button type="button" onclick="
+                        document.getElementById('_menu_links').style.maxHeight = '0vh';
+                        setTimeout(() => {document.getElementById('_menu_links').style.display = 'none';}, 100);
+                    ">[@@@ Fechar links]</button>
                 </div>
+
                 <ul>
                     <li>
                         <a href="./index.html">Menu principal</a>
@@ -37,7 +59,7 @@
                     <li>
                         <a href="#">Site 2</a>
                     </li>
-                    <li>
+                    <li class="aba_de_categorias">
                         <span>Aba de categorias 1</span>
                         <ul>
                             <li>
@@ -54,33 +76,7 @@
                 </ul>
             </div>
         </nav>
-        <header class="max_height_auto">
-
-            <div id="cabecalho">
-                <div>
-                    <a href="./index.html">
-                        <div class="logo_em_css">
-                            RanCode
-                        </div>
-                    </a>
-                </div>
-                <div class="display_none_600">
-                    <p>Hello World!</p>
-                </div>
-                <div>
-                    <div id="_header_links" onclick="
-                        document.querySelectorAll('header')[0].style.display = 'none';
-                        document.querySelectorAll('#_menu_links > div')[0].style.display = 'block'; 
-
-                    ">
-                        [@@@ Bloco de links]
-                    </div>
-                </div>
-            </div>
-        </header>
-
         
-
         <main>
             <div>
                 <h2>Conteúdo</h2>
@@ -265,12 +261,13 @@
             </div>
         </main>
         
-        <footer>
-            <div id="rodape">
+        <footer id="rodape">
+            <div>
                 <h2>Rodapé</h2>
             </div>
         </footer>
     </div>
 
+    <script src="./script.js"></script>
 </body>
 </html>
