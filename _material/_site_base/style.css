@@ -583,7 +583,9 @@ button:hover {
         justify-content: space-between;
         align-items: center;
         padding: 1px 15px 1px 15px;
-        margin: 5px 0px 5px 0px;
+        
+        margin: 5px auto 5px auto;
+        max-width: 1200px;
     }
 
         #corpo > header#cabecalho > div > div {
@@ -595,13 +597,17 @@ button:hover {
             margin: 0px 0px 0px 0px;
         }
 
+        #corpo > header#cabecalho > div > div#_fechar_menu_links {
+            display: none;
+        }
+
 nav#_menu_links {
-    position: fixed;
-    top: 0px;
     overflow: auto;
     width: 100%;
     z-index: 2;
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
 
     display: none;
     max-height: 0vh;
@@ -610,12 +616,6 @@ nav#_menu_links {
 
     nav#_menu_links > div {
         position: relative;
-    }
-
-    nav#_menu_links > div > div#_fechar_menu_links {
-        position: fixed;
-        top: 10px;
-        right: 10px;
     }
 
     nav#_menu_links > div ul {
@@ -640,10 +640,12 @@ nav#_menu_links {
             height: 100%;
             padding: 5px 20px 5px 20px;
             box-sizing: border-box;
+            color: var(--cor_z2);
         }
             nav#_menu_links > div ul > li > a:hover {
                 background-color: var(--cor_a7);
                 text-decoration: underline;
+                color: var(--cor_z3);
             }
 
         nav#_menu_links > div ul > li.aba_de_categorias {

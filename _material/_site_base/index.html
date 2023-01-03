@@ -12,11 +12,16 @@
     <link rel="stylesheet" href="./style.css" />
     
     <title>Modelo de site html</title>
+
+    <link rel="stylesheet" href="../framework/fontawesome/fontawesome-free-6.2.1-web/css/all.min.css">
 </head>
 <body>
 
     <div id="corpo">
         
+        <!-- 
+            @@@ Fazer um menu mais bonito, quando a página rola para baixo ele está grudando no topo de uma forma muito seca, seria legal adicionar um espaçamento maior e quando o usuário descer a tela esse espaçamento diminui redimencionando o conteudo de forma linear por 1 segundo e então grudando no topo
+        -->
         <header id="cabecalho">
             <div>
                 <div>
@@ -34,48 +39,96 @@
                 <div id="_abrir_menu_links">
                     <button type="button" onclick="
                         document.getElementById('_menu_links').style.display = 'block';
-                        setTimeout(() => {document.getElementById('_menu_links').style.maxHeight = '80vh';}, 100);
-                    ">[@@@ Abrir links]</button>
-                </div>
-            </div>
-        </header>
+                        setTimeout(() => {document.getElementById('_menu_links').style.maxHeight = '40vh';}, 100);
 
-        <nav id="_menu_links">
-            <div>
+                        document.getElementById('_abrir_menu_links').style.display = 'none';
+                        document.getElementById('_fechar_menu_links').style.display = 'block';
+                    ">
+                        <i class="fa-solid fa-bars" style="padding: 0px 12px 0px 12px;"></i>
+                    </button>
+                </div>
                 <div id="_fechar_menu_links">
                     <button type="button" onclick="
                         document.getElementById('_menu_links').style.maxHeight = '0vh';
                         setTimeout(() => {document.getElementById('_menu_links').style.display = 'none';}, 100);
-                    ">[@@@ Fechar links]</button>
-                </div>
 
-                <ul>
-                    <li>
-                        <a href="./index.html">Menu principal</a>
-                    </li>
-                    <li>
-                        <a href="#">Site 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Site 2</a>
-                    </li>
-                    <li class="aba_de_categorias">
-                        <span>Aba de categorias 1</span>
-                        <ul>
-                            <li>
-                                <a href="#">Site 3</a>
-                            </li>
-                            <li>
-                                <a href="#">Site 4</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Site 5</a>
-                    </li>
-                </ul>
+                        document.getElementById('_abrir_menu_links').style.display = 'block';
+                        document.getElementById('_fechar_menu_links').style.display = 'none';
+                    ">
+                        <i class="fa-solid fa-x"  style="padding: 0px 12px 0px 12px;"></i>
+                    </button>
+                </div> 
+
             </div>
-        </nav>
+
+            <nav id="_menu_links">
+                <div>
+                    <ul>
+                        <li>
+                            <a href="./index.html">Menu principal</a>
+                        </li>
+                        <li>
+                            <a href="#">Site 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Site 2</a>
+                        </li>
+                        <li class="aba_de_categorias">
+                            <span>Aba de categorias 1</span>
+                            <ul>
+                                <li>
+                                    <a href="#">Site 3</a>
+                                </li>
+                                <li>
+                                    <a href="#">Site 4</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Site 5</a>
+                        </li>
+                        <li>
+                            <a href="#">Site 5</a>
+                        </li>
+                        <li>
+                            <a href="#">Site 5</a>
+                        </li>
+                        <li>
+                            <a href="#">Site 5</a>
+                        </li>
+                        <li>
+                            <a href="#">Site 5</a>
+                        </li>
+                        <li>
+                            <a href="#">Site 5</a>
+                        </li>
+                        <li>
+                            <a href="#">Site 5</a>
+                        </li>
+                        <li>
+                            <a href="#">Site 5</a>
+                        </li>
+                        <li>
+                            <a href="#">Site 5</a>
+                        </li>
+                        <li>
+                            <a href="#">Site 5</a>
+                        </li>
+                        <li>
+                            <a href="#">Site 5</a>
+                        </li>
+                        <li>
+                            <a href="#">Site 5</a>
+                        </li>
+                        <li>
+                            <a href="#">Site 5</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        
         
         <main>
             <div>
@@ -208,6 +261,7 @@
 
                         <p>Iframe:</p>
                         
+                        <p>Descomentar o código que traz o Iframe [@@@ Problemas no console quando adicionado o iframe]</p>
                         <!-- 
                             <div class="conteiner_de_iframe_youtube">
                                 <iframe width="560" height="315" src="https://www.youtube.com/embed/u9NE0jInb_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
