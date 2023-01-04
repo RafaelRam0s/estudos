@@ -32,6 +32,11 @@ Formatação da logo Rancode
     ============ Instalação de fontes externas ============= 
 */
 
+/* 
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+    font-family: 'Noto Sans Mono', monospace;
+*/
 @font-face {
     font-family: 'Noto_Sans_Mono';
     src: url('./midia/fonts/noto_sans_mono/static/NotoSansMono/NotoSansMono-Thin.ttf') format('truetype');
@@ -384,6 +389,72 @@ code {
     font-family: monospace;
 }
 
+table {
+    display: table;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border: 2px solid rgb(0, 0, 0);
+    caption-side: top;
+    empty-cells: show;
+    margin: 0px auto 0px auto;
+    table-layout: fixed;
+    width: auto;
+}
+caption {
+    display: table-caption;
+    text-align: center;
+    font-weight: 900;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+    border: 2px solid rgb(0, 0, 0);
+    
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+    border: 2px solid rgb(0, 0, 0);
+}
+th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: 700;
+    text-align: center;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 5px 10px 5px 10px;
+    min-width: 200px;
+    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+td {
+    display: table-cell;
+    vertical-align: inherit;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 5px 10px 5px 10px;
+    min-width: 200px;
+    text-align: right;
+}
+
+button {
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 1px 1px 1px 1px;
+    font-weight: 400;
+}
+button:hover {
+    opacity: 0.9;
+    font-weight: 700;
+}
+
+
+
+
+
 
 
 
@@ -446,18 +517,17 @@ nav {
 button {
     background-color: var(--cor_z0);
     color: var(--cor_z1);
-    border: 2px solid black;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 1px 1px 1px 1px;
-    font-weight: 400;
-}
-button:hover {
-    opacity: 0.9;
-    font-weight: 700;
 }
 
-
+table, tbody, tr, th, td {
+    border-color: var(--cor_z3);
+}
+tr:nth-child(2n-1) {
+    background-color: var(--cor_z0);
+}
+tr:hover {
+    background-color: var(--cor_a3);
+}
 
 
 
@@ -468,6 +538,10 @@ button:hover {
 /* 
     ========== Classes montadas ===================
 */
+
+#corpo {
+    position: relative;
+}
 
 .bloco_cor_a1 {
     background-color: var(--cor_a1);
@@ -534,6 +608,12 @@ button:hover {
     height: 90%;
 }
 
+.container_de_tabela {
+    overflow: auto;
+    width: 100%;
+    max-height: 50vh;
+}
+
 .texto_legenda {
     text-shadow: 
         1px 0px 1px var(--cor_z2), 
@@ -553,11 +633,15 @@ button:hover {
     width: 84px;
 }
 
-#corpo {
-    position: relative;
-    /* display: none; */
-}
 
+
+
+
+
+
+
+
+/* Header */
 #corpo > header#cabecalho {
     background-color: var(--cor_a1);
     color: var(--cor_z2);
@@ -662,7 +746,13 @@ nav#_menu_links {
             max-height: 0vh;
             transition: max-height 0.05s linear 0s;
         }
+/* Fim Header */
 
+
+
+
+
+/* Rodape */
 #corpo > footer#rodape > div  {
     background-color: var(--cor_a1);
     color: var(--cor_z2);
@@ -682,7 +772,6 @@ nav#_menu_links {
     color: var(--cor_z2);
     text-decoration: underline;
 }
-
 
 #corpo > footer#rodape > div > div#area_informacoes {
     width: 100%;
@@ -716,23 +805,22 @@ nav#_menu_links {
     margin: 0px;
     font-weight: 800;
 }
+/* Fim Rodape */
 
 
-@media (max-width: 600px) {
-    .display_none_600px {
-        display: none;
-    }
 
-    #corpo > footer#rodape > div > div#area_informacoes {
-        flex-direction: column;
-    }
-    #corpo > footer#rodape > div > div#area_informacoes > div {
-        width: 100%;
-        text-align: center;
-    }
-    #corpo > footer#rodape > div p {
-        text-align: center;
-    }
+
+
+
+
+
+
+
+
+
+/* Preloader */
+/* #corpo {
+    display: none;
 }
 
 div#preloader {
@@ -766,7 +854,35 @@ div#preloader > div {
     animation-delay: 0s;
     animation-iteration-count: infinite;
     animation-direction: normal;
+} */
+/* Fim Preloader */
+
+
+
+
+
+
+
+@media (max-width: 600px) {
+    .display_none_600px {
+        display: none;
+    }
+    
+    /* Rodape */
+    #corpo > footer#rodape > div > div#area_informacoes {
+        flex-direction: column;
+    }
+    #corpo > footer#rodape > div > div#area_informacoes > div {
+        width: 100%;
+        text-align: center;
+    }
+    #corpo > footer#rodape > div p {
+        text-align: center;
+    }
+    /* Fim Rodape */
 }
+
+
 
 
 
