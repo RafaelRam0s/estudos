@@ -28,6 +28,8 @@ Formatação da logo Rancode
 </div>  
 */
 
+@charset "UTF-8";
+
 /* 
     ============ Instalação de fontes externas ============= 
 */
@@ -131,11 +133,11 @@ Formatação da logo Rancode
     line-height: 32px;
 }
 
-div, nav, main, footer, header, article, aside, dt, figcaption {
+div, nav, main, footer, header, article, aside, dt, figcaption, optgroup {
     display: block;
 }
 
-head, meta, link, title {
+head, meta, link, title, datalist {
     display: none;
 }
 
@@ -156,7 +158,7 @@ body {
 
 main {
     max-width: 1200px;
-    margin: 0px auto 0px auto;
+    margin: 10px auto 0px auto;
     padding: 10px 16px 10px 16px;
 }
 
@@ -443,7 +445,7 @@ button {
     border: 2px solid black;
     border-radius: 5px;
     cursor: pointer;
-    padding: 1px 1px 1px 1px;
+    padding: 0px 12px 0px 12px;
     font-weight: 400;
 }
 button:hover {
@@ -451,12 +453,132 @@ button:hover {
     font-weight: 700;
 }
 
+input, select, textarea {
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: black;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+    line-height: 19px;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: left;
+    appearance: auto;
+    background-color: white;
+    margin: 5px 0px 5px 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(118, 118, 118);
+    border-radius: 2px;
+    padding: 6px 3px 6px 3px;
+    -webkit-rtl-ordering: logical;
+}
+input[type="text"], input[type="password"] {
+    width: 200px;
+    cursor: text;
+}
+input[type="text"]:hover, input[type="password"]:hover {
+    border-color: rgb(0, 0, 0);
+}
+input[type="password"] {
+    -webkit-text-security: disc !important;
+}
+input[type="checkbox"], input[type="radio"] {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
 
+input[type="color"] {
+    appearance: auto;
+    width: 40px;
+    height: 25px;
+    cursor: pointer;
+    box-sizing: content-box;
+    background-color: rgb(228, 228, 228);
+    color: black;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(118, 118, 118);
+    border-image: initial;
+    padding: 5px 3px 5px 3px;
+}
 
+input[type="range"] {
+    appearance: auto;
+    cursor: e-resize;
+    color: rgb(228, 228, 228);
+    border: none;
+    vertical-align: middle;
+    width: 135px;
+    height: 20px;
+}
 
+input[type="file"] {
+    cursor: pointer;
+    align-items: baseline;
+    text-overflow: ellipsis;
+    white-space: pre;
+    border: initial;
+    overflow: hidden !important;
+    max-width: 260px;
+}
 
+select {
+    align-items: center;
+    white-space: pre;
+    cursor: pointer;
+    padding: 2px 4px 2px 4px;
+}
 
+option {
+    display: block;
+    white-space: nowrap;
+    min-height: 20px;
+    padding: 2px 4px 2px 4px;
+}
 
+output {
+    display: inline;
+    unicode-bidi: isolate;
+}
+
+textarea {
+    resize: auto;
+    cursor: text;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    background-color: rgb(255, 255, 255);
+    column-count: initial !important;
+}
+
+fieldset {
+    display: block;
+    margin: 0px 0px 0px 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-block-start: 0px;
+    padding-inline-start: 0px;
+    padding-inline-end: 0px;
+    padding-block-end: 0px;
+    min-inline-size: min-content;
+    border-width: 2px;
+    border-style: groove;
+    border-color: rgb(192, 192, 192);
+    border-image: none;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 3px;
+}
+
+legend {
+    display: block;
+    padding-inline-start: 2px;
+    padding-inline-end: 2px;
+    border: none;
+}
 
 
 
@@ -633,7 +755,9 @@ tr:hover {
     width: 84px;
 }
 
-
+.display_none {
+    display: none;
+}
 
 
 
@@ -763,6 +887,7 @@ nav#_menu_links {
 #corpo > footer#rodape > div p {
     color: var(--cor_z2);
     margin: 5px 0px 5px 0px;
+    text-align: center;
 }
 #corpo > footer#rodape > div a {
     color: var(--cor_z0);
@@ -781,14 +906,15 @@ nav#_menu_links {
     box-sizing: border-box;
     
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
 }
 
 #corpo > footer#rodape > div > div#area_informacoes > div {
-    width: 50%;
+    width: 100%;
+    text-align: center;
 }
 
 #corpo > footer#rodape > div > div#area_copyright {
@@ -837,10 +963,10 @@ div#preloader > div {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     background-color: #00ffaa;
     z-index: 9;
     padding: 12px;
+    transform: translate(-50%, -50%);
 }
 
 @keyframes animacaoRodando {
@@ -863,26 +989,26 @@ div#preloader > div {
 
 
 
-@media (max-width: 600px) {
-    .display_none_600px {
-        display: none;
+@media all and (min-width: 600px) {
+    .display_block_600px {
+        display: block;
     }
     
     /* Rodape */
     #corpo > footer#rodape > div > div#area_informacoes {
-        flex-direction: column;
+        flex-direction: row;
     }
     #corpo > footer#rodape > div > div#area_informacoes > div {
-        width: 100%;
-        text-align: center;
-    }
-    #corpo > footer#rodape > div p {
-        text-align: center;
+        width: 50%;
     }
     /* Fim Rodape */
 }
 
-
+@media print {
+    body::before {
+        content: "Esta mensagem só aparecerá ao solicitar a impressão da página, com o ctrl+p";
+    }
+}
 
 
 

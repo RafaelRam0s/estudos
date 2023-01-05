@@ -9,7 +9,7 @@
     
     <link rel="license" href="./../../LICENSE">
     <link rel="icon" href="./midia/icones/icone_logo_r_16px.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style.css" media="all" />
     
     <title>Modelo de site html</title>
 
@@ -41,7 +41,7 @@
                     </a>
                 </div>
 
-                <div class="display_none_600px">
+                <div class="display_none display_block_600px">
                     <span class="mensagem_menu">Hello World!</span>
                 </div>
 
@@ -53,7 +53,7 @@
                         document.getElementById('_abrir_menu_links').style.display = 'none';
                         document.getElementById('_fechar_menu_links').style.display = 'block';
                     ">
-                        <i class="fa-solid fa-bars" style="padding: 0px 12px 0px 12px;"></i>
+                        <i class="fa-solid fa-bars"></i>
                     </button>
                 </div>
                 <div id="_fechar_menu_links">
@@ -64,7 +64,7 @@
                         document.getElementById('_abrir_menu_links').style.display = 'block';
                         document.getElementById('_fechar_menu_links').style.display = 'none';
                     ">
-                        <i class="fa-solid fa-x"  style="padding: 0px 12px 0px 12px;"></i>
+                        <i class="fa-solid fa-x"></i>
                     </button>
                 </div> 
 
@@ -383,6 +383,201 @@
                 </section>
 
                 <section>
+                    <h3>Formulários:</h3>
+
+                    <div>
+                        <h4>Botões</h4>
+
+                        <div>
+                            <button type="button">Tipo button</button>
+                            <button type="reset">Tipo reset</button>
+                            <button type="submit">Tipo submit</button>
+                        </div>
+
+                        <h4>Input Text</h4>
+
+                        <div>
+                            <form action="#" method="GET" autocomplete="on">
+                                <label for="id_nome">Nome:</label>
+                                <input type="text" id="id_nome" name="name_nome" required="required" minlength="2" maxlength="255" placeholder="Digite um nome..." autocomplete="name" />
+                                <button type="submit">Enviar formulário</button>
+                            </form>
+                        </div>
+
+                        <h4>Input Password</h4>
+
+                        <div>
+                            <form action="#" method="GET" autocomplete="off">
+                                <label for="id_senha">Senha:</label>
+                                <input type="password" id="id_senha" name="name_senha" />
+                                <button type="submit">Enviar formulário</button>
+                            </form>
+                        </div>
+
+                        <h4>Input Checkbox</h4>
+
+                        <div>
+                            <form action="#" method="GET" autocomplete="off">
+                                <label for="id_checkbox">Caixa de seleção</label>
+                                <input type="checkbox" id="id_checkbox" name="name_checkbox" value="Marcado" />
+
+                                <button type="submit">Enviar formulário</button>
+                            </form>
+                        </div>
+
+                        <h4>Input Radio</h4>
+
+                        <div>
+                            
+                            <form action="#" method="GET" autocomplete="off">
+                                <label for="id_radio1">radio1</label>
+                                <input type="radio" id="id_radio1" name="name_radio" value="radio1" checked="checked" />
+                                <label for="id_radio2">radio2</label>
+                                <input type="radio" id="id_radio2" name="name_radio" value="radio2" />
+
+                                <button type="submit">Enviar formulário</button>
+                            </form>
+                        </div>
+
+                        <h4>Input Color</h4>
+
+                        <div>
+                            <form action="#" method="GET" autocomplete="off">
+                                <label for="id_color">color</label>
+                                <input type="color" id="id_color" name="name_color" value="#0099ff" />
+
+                                <button type="submit">Enviar formulário</button>
+                            </form>
+                        </div>
+
+                        <h4>Input Range</h4>
+
+                        <div>
+                            <form action="#" method="GET" autocomplete="off">
+                                <label for="id_range">range</label>
+                                <input type="range" id="id_range" name="name_range" min="1" max="10" value="2" />
+
+                                <button type="submit">Enviar formulário</button>
+                            </form>
+                        </div>
+
+                        <h4>Input File</h4>
+                        
+                        <div>
+                            <form action="#" method="POST" autocomplete="off">
+                                <label for="id_file">file</label>
+                                <input type="file" id="id_file" name="name_file" />
+
+                                <button type="submit">Enviar formulário</button>
+                            </form>
+                        </div>
+
+                        <h4>Select, Option, Optgroup</h4>
+                        
+                        <div>
+                            <form action="#" method="GET" autocomplete="off">
+                                <label for="id_select">Aba de seleções</label>
+                                <select id="id_select" name="name_select" required>
+                                    <option value="" disabled>Selecione uma opção</option>
+                                    <option value="select_option_0">0</option>
+                                    <optgroup label="optgroup1">
+                                        <option value="select_option_1">1</option>
+                                        <option value="select_option_2">2</option>
+                                        <option value="select_option_3">3</option>
+                                    </optgroup>
+                                    <optgroup label="optgroup2">
+                                        <option value="select_option_4">4</option>
+                                        <option value="select_option_5">5</option>
+                                        <option value="select_option_6">6</option>
+                                    </optgroup>
+                                    <option value="select_option_7">7</option>
+                                </select>
+
+                                <button type="submit">Enviar formulário</button>
+                            </form>
+                        </div>
+
+                        <h4>Datalist</h4>
+
+                        <div>
+                            <form action="#" method="GET" autocomplete="off">
+                                <label for="name_datalist">datalist</label>
+                                <input type="text" id="id_datalist" name="name_datalist" list="datalist_1" />
+
+                                <datalist id="datalist_1">
+                                    <option value="datalist_option_1">datalist_option_1</option>
+                                    <option value="datalist_option_2">datalist_option_2</option>
+                                    <option value="datalist_option_3">datalist_option_3</option>
+                                </datalist>
+                                
+                                <button type="submit">Enviar formulário</button>
+                            </form>
+                        </div>
+
+                        <h4>Textarea</h4>
+                        
+                        <div>   
+                            <form action="#" method="GET" autocomplete="off">
+                                <label for="id_textarea">textarea</label>
+                                <textarea id="id_textarea" name="name_textarea" cols="30" rows="5"></textarea>
+                                
+                                <button type="submit">Enviar formulário</button>
+                            </form>
+                        </div>
+
+                        <h4>Output</h4>
+
+                        <div>
+                            <label for="output">Output:</label>
+                            <output id="id_output" name="name_output">Saída de dados</output>
+                        </div>
+
+                        <h4>Campo de Formulário</h4>
+
+                        <div>
+                            <form action="#" method="GET">
+                                <fieldset>
+                                    <legend>[@@@ Campo de intputs à editar]</legend>
+
+                                    <div>
+                                        <label for="id_numero">Numérico</label>
+                                        <input type="number" id="id_numero" name="name_numero" min="0" max="10" step="0.01" />
+                                    </div>
+
+                                    <div>
+                                        <label for="id_month">month</label>
+                                        <input type="month" id="id_month" name="name_month" value="2020-07" />
+                                    </div>
+
+                                    <div>
+                                        <label for="id_date">date</label>
+                                        <input type="date" id="id_date" name="name_date" value="2002-07-13" />
+                                    </div>
+
+                                    <div>
+                                        <label for="id_time">time</label>
+                                        <input type="time" id="id_time" name="name_time" />
+                                    </div>
+
+                                    <div>
+                                        <label for="id_email">email</label>
+                                        <input type="email" id="id_email" name="name_email" />
+                                    </div>
+
+                                    <div>
+                                        <label for="id_tel">tel</label>
+                                        <input type="tel" id="id_tel" name="name_tel" pattern="^\([0-9]{2}\)[0-9]{4,5}-[0-9]{4}$" placeholder="(xx) xxxxx-xxxx" />
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+
+                        
+                        
+                    </div>
+                </section>
+
+                <section>
                     <h3>Teste</h3>
 
                     <div>
@@ -406,6 +601,10 @@
                             </div>
                         </a>
                         <p><q>De grão em grão a galinha enche o papo</q></p>
+                        <p>[@@@ Criar termos de uso]</p>
+                        <p>[@@@ Criar política de privacidade]</p>
+                        <p>[@@@ Criar links de parceria]</p>
+                        <p>[@@@ Criar área de selos de qualidade do site]</p>
                     </div>
                     <div class="width_100p_600px">
                         <address>
@@ -418,6 +617,8 @@
                                 <i class="fa-brands fa-instagram"></i>
                                 Instragram: <a href="https://www.instagram.com/rafael6ramos/" target="_blank" rel="nofollow">rafael6ramos</a>
                             </p>
+                            <p>[@@@ Criar email para contato]</p>
+                            <p>[@@@ Criar área de copyright]</p>
                         </address>
                     </div>
                 </div>

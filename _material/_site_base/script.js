@@ -56,3 +56,22 @@
     );
 })();
 
+
+/* 
+    @@@ Fazer classes máscaras de input e delimitações de valores aceitos:
+        Numérico, aceitando; 0123456789.,/
+        Data, (dd/mm/aaaa), aceitando; 0123456789
+        Horário, (--:--), aceitando; 0123456789
+        Telefone ((+xx) xx xxxxx-xxxx), aceitando; 0123456789+ //Brasil, ver outros paises e internacional regex
+        E-mail (texto@texto)
+
+*/
+
+
+
+
+
+
+
+
+
