@@ -87,4 +87,13 @@ Pseudo-Elementos:
         Observação: o before para que possa ser aplicado precisa que o atributo content seja definido.
 
     
+Selecionadores:
+    [attribute] - [target] - Seleciona todos os atributos com o atributo target
+    [attribute=value] - [target=_blank] - Seleciona todos os elementos com target="_blank"
+    [attribute~=value] - [title~=flower] - Seleciona todos os elementos com um atributo title contendo a palavra "flower"
+    [attribute|=value] - [lang|=en] - Seleciona todos os elementos com um atributo lang com o valor en, en-top funciona, enteste não funciona
+    [attribute^=value] - a[href^="https"] - Seleciona todo elemento <a> quando o atributo href começa com "https" 
+    [attribute$=value] - a[href$=".pdf"] - Seleciona todo elemento <a> quando o atributo href termina com ".pdf"
+    [attribute*=value] - a[href*="w3schools"] - Seleciona todo elemento <a> quando o atributo href possui a string "w3school"
+
 

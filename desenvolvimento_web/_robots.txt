@@ -1,0 +1,61 @@
+Um arquivo robots.txt é importante para todo site. Nele podemos configurar quais caminhos de arquivos os sistemas de busca devem usar, por exemplo: 
+
+Imagine que eu tenho a pasta do meu site, nele tem o arquivo index.html e 2 pastas, uma com nome teste1 e a outra com nome teste2, imagine que em ambas as pastas existem um arquivo index.html e um style.css, agora um sistema de busca pode ficar alterando a url para acessar qualquer arquivo dentro do site, mas quando colocamos um robots.txt podemos informar o que ele deve e não deve acessar.
+
+www.site_teste.com
+www.site_teste.com/index.html
+www.site_teste.com/teste1/index.html
+www.site_teste.com/teste1/style.css
+www.site_teste.com/teste2/index.html
+www.site_teste.com/teste2/style.css
+
+O arquivo robots.txt sempre deve ficar na raiz do seu projeto (www.site_teste.com/robots.txt), tem que ser assim pois é o padrão que os sistemas de busca utilizam, caso coloque em outra pasta é capaz de os sistemas de busca nem se darem ao trabalho de ler o arquivo.
+
+
+----- Códigos
+User-agent: Googlebot
+Disallow: /nogooglebot/
+
+O user agent chamado "Googlebot" não poderá rastrear qualquer URL que comece com http://example.com/nogooglebot/
+---
+User-agent: *
+Allow: /
+
+Os user agents poderão rastrear todo o site. Essa informação poderia ter sido omitida, e o resultado seria o mesmo. O comportamento padrão é que os user agents tenham permissão para rastrear todo o site.
+---
+
+User-agent: Googlebot
+Disallow: /nogooglebot/
+
+User-agent: *
+Allow: /
+
+Todos os user agents poderão ver todas as pastas do site, exceto o Googlebot que não poderá rastrear qualquer URL que comece com http://example.com/nogooglebot/
+---
+
+Sitemap: http://www.example.com/sitemap.xml
+
+Indica que o arquivo do sitemap está localizado em http://www.example.com/sitemap.xml
+---
+
+# Example 1: Block only Googlebot
+User-agent: Googlebot
+Disallow: /
+
+# Example 2: Block Googlebot and Adsbot
+User-agent: Googlebot
+User-agent: AdsBot-Google
+Disallow: /
+
+# Example 3: Block all but AdsBot crawlers
+User-agent: *
+Disallow: /
+---
+
+Sitemap: https://example.com/sitemap.xml
+Sitemap: http://www.example.com/sitemap.xml
+---
+
+https://developers.google.com/search/docs/advanced/robots/create-robots-txt?hl=pt-br
+
+

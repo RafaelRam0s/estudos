@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Rafael Ramos da Silva" />
+    <meta name="description" content="Página com configurações padrão, para que eu possa ter uma noção de como estão as formatações e os padrões do que eu defini e utilizo com frequência." />
+    <meta name="keywords" content="exemplos, html, css, preferencias, site" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="license" href="./../../LICENSE">
+    <link rel="icon" href="./midia/icones/icone_logo_r_16px.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css" media="all" />
+    
+    <title>Modelo de site html</title>
+
+    <link rel="stylesheet" href="../framework/fontawesome/fontawesome-free-6.2.1-web/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.css"> -->
+
+
+</head>
+<body>
+
+    <!-- 
+        <div id="preloader">
+            <div>
+                <i class="fa-solid fa-spinner animacao_rodando"></i>
+                Carregando...
+            </div>
+        </div> 
+    -->
+
+    <div id="corpo">
+
+        <header id="cabecalho">
+            <div>
+                <div>
+                    <a href="./index.html">
+                        <div class="logo_em_css">
+                            RanCode
+                        </div>
+                    </a>
+                </div>
+
+                <div class="display_none display_block_600px">
+                    <span class="mensagem_menu">Hello World!</span>
+                </div>
+
+                <div id="_abrir_menu_links">
+                    <button type="button" onclick="
+                        document.getElementById('_menu_links').style.display = 'block';
+                        setTimeout(() => {document.getElementById('_menu_links').style.maxHeight = '40vh';}, 100);
+
+                        document.getElementById('_abrir_menu_links').style.display = 'none';
+                        document.getElementById('_fechar_menu_links').style.display = 'block';
+                    ">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+                <div id="_fechar_menu_links">
+                    <button type="button" onclick="
+                        document.getElementById('_menu_links').style.maxHeight = '0vh';
+                        setTimeout(() => {document.getElementById('_menu_links').style.display = 'none';}, 100);
+
+                        document.getElementById('_abrir_menu_links').style.display = 'block';
+                        document.getElementById('_fechar_menu_links').style.display = 'none';
+                    ">
+                        <i class="fa-solid fa-x"></i>
+                    </button>
+                </div> 
+
+            </div>
+
+            <nav id="_menu_links">
+                <div>
+                    <ul>
+                        <li>
+                            <a href="./index.html">Menu principal</a>
+                        </li>
+                        <li>
+                            <a href="#">Site 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Site 2</a>
+                        </li>
+                        <li class="aba_de_categorias">
+                            <span>Aba de categorias 1</span>
+                            <ul>
+                                <li>
+                                    <a href="#">Site 3</a>
+                                </li>
+                                <li>
+                                    <a href="#">Site 4</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Site 5</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+        <main>
+            <div>
+                <label for="id_telefone">Input de telefone:</label>
+                <input type="text" name="name_telefone" id="id_telefone">
+            </div>
+
+            <script>
+                
+                let elemento = document.getElementById('id_telefone');
+
+                // elemento.addEventListener(
+                //     "keyup",
+                //     function () {
+                //         alert('teste');
+                //     },
+                //     true
+                // )
+
+
+
+
+            </script>
+        </main>
+        
+        <hr />
+
+        <footer id="rodape">
+            <div>
+                <div id="area_informacoes" class="flex-direction_column_600px">
+                    <div class="width_100p_600px">
+                        <a href="./index.html">
+                            <div class="logo_em_css">
+                                RanCode
+                            </div>
+                        </a>
+                        <p><q>De grão em grão a galinha enche o papo</q></p>
+                        <p>[@@@ Criar termos de uso]</p>
+                        <p>[@@@ Criar política de privacidade]</p>
+                        <p>[@@@ Criar links de parceria]</p>
+                        <p>[@@@ Criar área de selos de qualidade do site]</p>
+                    </div>
+                    <div class="width_100p_600px">
+                        <address>
+                            <p>Criado por: Rafael Ramos da Silva</p>
+                            <p>
+                                <i class="fa-brands fa-github"></i> 
+                                Github: <a href="https://github.com/RafaelRam0s" target="_blank" rel="nofollow">RafaelRam0s</a>
+                            </p>
+                            <p>
+                                <i class="fa-brands fa-instagram"></i>
+                                Instragram: <a href="https://www.instagram.com/rafael6ramos/" target="_blank" rel="nofollow">rafael6ramos</a>
+                            </p>
+                            <p>[@@@ Criar email para contato]</p>
+                            <p>[@@@ Criar área de copyright]</p>
+                        </address>
+                    </div>
+                </div>
+                
+                <div id="area_copyright">
+                    <hr />
+                    <p>Atualmente, em 2023, sou estudante da <abbr title="Universidade Tecnológica Federal do Paraná">UTFPR</abbr>, Campus Ponta Grossa do curso de Bacharelado em Ciências da Computação</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
