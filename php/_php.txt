@@ -1,0 +1,1377 @@
+
+
+
+
+
+
+
+Para programar em php no html;
+    <?php
+        // Código php
+    ?>
+
+
+
+Para printar/apresentar uma mensagem na tela:
+    // echo(string $texto): void
+    echo('<p>Olá Mundo!!!</p>');
+    
+
+
+Comentários:
+    // Comentário em linha
+    
+    # Comentário em linha
+    
+    /*
+        Comentário
+        em bloco
+    */
+
+
+
+Variáveis:  
+    $nome_da_variavel = 'Olá Mundo';
+    
+    echo('<p>$nome_da_variavel</p>');
+    print('<p>$nome_da_variavel</p>');
+
+    echo("<p>$nome_da_variavel</p>");
+    print("<p>$nome_da_variavel</p>");
+
+    echo('<p>' . $nome_da_variavel . '</p>');
+    print('<p>' . $nome_da_variavel . '</p>');
+    
+    class Objeto 
+    {}
+
+    $inteiro = 100;
+    $float = 12.3;
+    $bool = true;
+    $string = 'Texto';
+    $array = [1, 2, 3];
+    $objeto = new Objeto();
+    $nulo = null
+
+Tipos de variáveis:
+    array = [1, '1', true];
+    string = 'teste';
+    bool = true;
+    int = 1;
+    float = 1.2;
+
+    function teste(array $parametro_1) {}
+    function teste():array { return []; }
+
+    // Nota: existe o declare(strict_types=1); // Faz com que se torne obrigatório respeitar a entrada de uma função definida
+    // Parametro sendo opcional o valor nulo: function teste(?array $parametro_1) {}
+
+Verificar se uma variável está definida:
+    isset($nome_da_variavel);
+
+Verificar se uma variável está vazia, nula, zerada ou falsa;
+    empty($nome_da_variavel);
+
+Como destruir (remover da memória) uma variável:
+    $a = 'teste';
+    unset($a);
+
+Verificar como uma variável está extruturalmente construída:
+    $a = 'Rafael';
+    print_r($a);
+    var_dum($a);
+    $b = ['Rafael', 'Ramos', 'Teste'];
+    print_r($b);
+    var_dum($b);
+
+Variáveis constantes:
+    class Matematica
+    {
+        const PI = 3.14;
+    }
+    echo(Matematica::PI);
+    $c = new Matematica();
+    echo($c::PI);
+
+    const TESTE_1 = 'Olá';
+    define('TESTE_2', 'testando);
+    echo(TESTE_1);
+
+Verificar se uma variável global já foi definida:
+    if (defined('NOME_DA_VARIVAEL_DEFINIDA'))
+    {
+        echo('Esta variável já foi definida');
+    } else {
+        echo('Esta variável não foi definida');
+    }
+
+
+
+Operadores Matemáticos:
+    $x = 5 + 3 // Adição = 8
+    $x = 5 - 3 // Subtração = 2
+    $x = 5 * 3 // Multiplicação = 15
+    $x = 5 / 3 // Divisão = 1.6666666666667
+    $x = 5 % 3 // Resto = 2
+    $x = 5 ** 3 // Expoente = 125
+    
+    $x += 3 // $x = $x + 3
+    $x -= 3 // $x = $x - 3
+    $x *= 3 // $x = $x * 3
+    $x /= 3 // $x = $x / 3
+
+    $x++ // $x = $x + 1
+    ++$x // ($x = 1 + $x)
+
+
+
+Operadores de Comparação:
+    Igual: 0 == '0' // true
+    Diferente: 0 != '0' // false
+    Totalmente Igual: 0 === '0' // false
+    Totalmente Diferente: 0 !== '0' // true
+    
+    Menor: 5 < 3 // false
+    Maior: 5 > 3 // true
+    Menor Igual: 5 <= 3 // false
+    Maior Igual: 5 >= 3 // true
+    
+    1 <=> 1 // 0 (1 == 1)
+    3 <=> 2 // 1 (3 > 2)
+    2 <=> 3 // -1 (2 < 3)
+
+    AND: true && true // true
+    OR: false || false // false
+    NOT: !true // false
+
+
+
+Comando para encerrar a leitura do php:
+    die();
+
+
+
+Concatenação de strings:
+    $teste = 'Hello' . ' ' . 'World';
+
+
+
+Textos grandes:
+
+    $texto_1 = <<<'LABEL'
+    Escrevendo um monte de palavras
+    De forma parecida com um grande conjunto de parágrafos
+    LABEL;
+
+    $texto_2 = '    Escrevendo um monte de palavras
+    De forma parecida com um grande conjunto de parágrafos';
+
+    echo( ($texto_1 === $texto_2) ? 'igual' : 'diferente' );
+
+    // Observação: as strings são sensíveis quanto ao espaço inserido dentro delas, então cuidado com tabs e espaços aleatórios
+
+
+
+Quebra de linha:
+    Para que uma representação de quebra de linha ocorra na página web, insira a tagname <br> dentro da string, visto que o html interpreta o texto do echo e do print como texto para html
+
+    Agora para servidor é necessário que a string esteja com aspas duplas e então utilize o \n
+
+    echo('Exemplo na web de quebra de linha.<br />Viu? ');
+    echo("Exemplo no servidor de quebra de linha.\nViu? ");
+
+
+
+Pegar um caracter de uma string:
+    $texto = 'Olá Mundo';
+    echo($texto[0]);
+    echo($texto[1]);
+
+Ver o número de caracteres de uma string:
+    $texto = 'Esta frase tem 28 caracteres';
+    $numero_de_caracteres = strlen($texto); // Retorna o valor numérico: 28
+    $numero_de_caracteres = mb_strlen($texto); // Retorna o valor numérico: 28
+
+Pegar caracteres dentro de um intervalo:
+    $texto = 'Esta frase tem 28 caracteres';
+    $corte_na_string = substr($texto, 11, 3); // Retorna a string: tem
+    $corte_na_string = mb_substr($texto, 11, 3); // Retorna a string: tem
+
+Converter todos os caracteres em maiúsculas:
+    $texto = 'Esta frase tem 28 caracteres';
+    $string_maiuscula = strtoupper($texto); // Retorna a string: ESTA FRASE TEM 28 CARACTERES
+    $string_maiuscula = mb_strtoupper($texto); // Retorna a string: ESTA FRASE TEM 28 CARACTERES
+
+Converter todos os caracteres em minúsculas:
+    $texto = 'Esta frase tem 28 caracteres';
+    $string_minuscula = strtolower($texto); // Retorna a string: esta frase tem 28 caracteres
+    $string_minuscula = mb_strtolower($texto); // Retorna a string: esta frase tem 28 caracteres
+
+Procurar um caracter na string:
+    $texto = 'Esta frase tem 28 caracteres';
+    $posicao_da_string = strpos($texto, 'a '); // Retorna o valor numérico: 3
+    $posicao_da_string = mb_strpos($texto, 'a '); // Retorna o valor numérico: 3
+
+Substituir uma palavra por outra:
+    $texto = 'Esta frase tem 28 caracteres';
+    $string_texto_alterado = str_replace('a', 'x', $texto); // Retorna a string: Estx frxse tem 28 cxrxcteres
+
+Procurar uma string dentro de uma string:
+    $nome = 'Rafael Ramos da Silva';
+    $x = str_contains($nome, 'Pinheiro');
+
+Verificar se uma string tem um inicio com outra string:
+    $nome = 'Rafael Ramos da Silva';
+    $x = str_starts_with($nome, 'rafael'); // false
+    $y = str_starts_with($nome, 'Rafael'); // true
+
+Verificar se uma string tem um final com outra string:
+    $nome = 'Rafael Ramos da Silva';
+    $x = str_ends_with($nome, 'silva'); // false
+    $y = str_ends_with($nome, 'Silva'); // true
+
+Remover espaços em brancos (ou strings) no inicio e no fim de uma string:
+    $a = '     Teste   .   ';
+    $b = trim($a);
+
+    $a = 'abcdefa';
+    $b = trim($a, 'a'); // bcdef
+    $b = ltrim($a, 'a'); // bcdefa // Caso queira remover somente na esquerda
+    $b = rtrim($a, 'a'); // abcdef // Caso queira remover somente na direita
+
+Repetir uma string uma quantidade de vezes definida:
+    // str_repeat($string, $quantidade_de_vezes) : string
+    $teste = '=-';
+    echo( str_repeat($teste, 5) );
+
+Transformar um string em um vetor à partir de um caractere chave:
+    $texto = 'Teste, testando o corte do explode, ok';
+    print_r( explode(',', $texto) );
+
+Transformar um vetor em uma string à partir de um caractere chave:
+    $texto = ['Teste', ' testando o corte do explode', ' ok'];
+    print_r( implode('|', $texto) );
+
+Substituir uma parte de uma string com outra string:
+    // str_replace(string $quem_deve_ser_substituido, string $como_deve_ficar_o_substituido, string $string_que_deve_ser_analisada, ?int $quantidade_de_vezes_a_substituir);
+
+
+
+Criptografar uma string em base64:
+    $texto = 'Esta frase tem 28 caracteres';
+    echo('Teste: ' . (base64_encode($texto)));
+
+Descriptografar uma string em base64:
+    $texto = 'Esta frase tem 28 caracteres';
+    echo('Teste: ' . base64_decode((base64_encode($texto))));
+
+Criptografar uma string em uuencode:
+    $texto = 'Esta frase tem 28 caracteres';
+    echo('Teste: ' . (convert_uuencode($texto)));
+
+Descriptografar uma string em uuencode:
+    $texto = 'Esta frase tem 28 caracteres';
+    echo('Teste: ' . convert_uudecode(convert_uuencode($texto)));
+
+
+
+Converter um número decimal em caracter com base na tabela ascii:
+        $numero = 65; // um número qualquer entre 0 e 255
+        $texto = chr($numero);
+        echo('Teste: ' . $texto);
+
+Converter um caracter em número decimal com base na tabela ascii:
+        $caracter = 'A';
+        $texto = ord($caracter);
+        echo('Teste: ' . $texto);
+
+Listar a quantidade de vezes que cada caracter de uma string se repetiu:
+    $texto = 'Esta frase tem 28 caracteres';
+    foreach ( count_chars($texto, 1) as $caracter => $quantidade_repetida )
+    {
+        echo('O caracter "' . chr($caracter) . '" se repetiu ' . $quantidade_repetida . ' vezes.' . "\n");
+    }
+
+    Observação:
+        Dependendo do segundo parâmetro de count_chars() pode retornar o seguinte:
+
+        0 - Um array com um byte-value como chave e a frequência de cada byte como valor.
+        1 - mesmo que o 0 mas apenas byte-values com frequência maior do que 0 são listadas.
+        2 - mesmo que 0 mas apenas byte-values com frequência igual a 0 são listadas.
+        3 - uma string contendo todos caracteres únicos é retornada.
+        4 - uma string contendo todos caracteres não usados é retornada.
+
+
+
+Criar um array:
+    $array_1 = array(10, 20, 30);
+    $array_2 = [10, 20, 30];
+
+    $array_3 = 
+    [
+        10 => 123,
+        20 => 456,
+        30 => 789
+    ]; // Aqui foi definido a chave e qual o valor respectivo que ela deve obter
+    
+    $array_4 = [
+        'A' => 1,
+        'B' => 2,
+        'C' => 3
+    ];
+
+    $array_5 = [
+        'nome' => 'Rafael Ramos',
+        'idade' => 18
+    ];
+
+Para apresentar um valor de um array:
+    $array = [10, 20, 30];
+    echo('Valores do array: ' . $array[0] . ', ' . $array[1] . ', ' . $array[2]);
+
+Adicionar um valor ao final do array:
+    $array = [10, 20, 30];
+    $array[] = 40;
+    array_push($array, 50);
+
+
+
+Estrutura condicional:
+    if (true) {
+        // código
+    }
+
+    if (true) {
+        // código
+    } else {
+        // código
+    }
+
+    if (true) {
+        // código
+    } elseif (true) {
+        // código
+    } else {
+        // código
+    }
+
+
+    switch ($variavel)
+    {
+        case valor1:
+            // código
+            break;
+        case valor2:
+            // código
+            break;
+        default:
+            // código
+            break;
+    }
+
+
+    if(true):
+        // código
+    elseif(true):
+        // código
+    else:
+        // código
+    endif;
+
+    switch ($variavel):
+        case valor1:
+            // código
+            break;
+        case valor2:
+            // código
+            break;
+        default:
+            // código
+            break;
+    endswitch;
+
+    (true) ? return true : return false; // Operador ternário
+
+Estrutura de repetição:
+    while (true) {
+        // código
+    }
+
+    do {
+        // código
+    } while (true);
+
+    for ($variavel_definida_localmente = 0; true; $acrescento_em_uma_variavel++)
+    {
+        // código
+    }
+
+    $nomes = ['joao', 'ana, 'carlos'];
+    foreach($nomes as $nome)
+    {
+        echo($nome . '<br />');
+    }
+
+    $capitais = [
+        'portugal' => 'Lisboa',
+        'brasil' => 'Brasilia',
+        'espanha' => 'Madrid'
+    ];
+    foreach($capitais as $chave => $valor)
+    {
+        echo('Para o país ' . $chave . ' a sua capital é ' . $valor . "\n");
+    }
+
+Saídas de blocos:
+    for(;true;)
+    {
+        if(true)
+        {
+            break; // interrompe o loop
+        }
+    }
+
+    for(;true;)
+    {
+        if(true)
+        {
+            continue; // vai direto para o final do loop
+        }
+    }
+
+    teste_1:
+    // Código
+    for(;true;)
+    {
+        if(true)
+        {
+            goto teste_2: // vai direto para a label que foi mencionada
+        }
+    }
+    teste_2:
+    // Código
+
+
+
+Montar Funções:
+    function nomeDaFuncao($parametroDaFuncao)
+    {
+        // código
+    }
+
+    function nomeDaFuncao($parametroDaFuncao1, $parametroDaFuncao2 = 3) // parametroDaFuncao2 é opcional de ser informado na chamada
+    {
+        // código
+    }
+    nomeDaFuncao(parametroDaFuncao2: 5, parametroDaFuncao1: 3);
+
+    function nomeDaFuncao($parametroDaFuncao)
+    {
+        $parametro_0 = func_get_arg(0);
+        $parametro_1 = func_get_arg(1);
+        $parametro_2 = func_get_arg(2);
+        $numero_de_parametros_passados = func_num_args(); // Verifica quantos parâmetros foram informados
+    }
+    nomeDaFuncao(10, 200, 3000);
+
+    function nomeDaFuncao(...$variadic_parameter)
+    {
+        foreach($variadic_parameter as $parametros)
+        {
+            echo($parametros . "\n");
+        }
+    }
+    nomeDaFuncao(10, 200, 3000);
+
+Colocar uma variável de fora da função, dentro da função:
+    $a = 10;
+    function funcao()
+    {
+        global $a;
+        $a = 20;
+    }
+    echo($a);
+
+    $b = 10;
+    function funcao()
+    {
+        $GLOBALS['b'] = 20;
+    }
+    echo($b);
+
+
+
+Criar Classes:
+    class ClasseHumano
+    {
+        public $nome;
+        public $idade;
+        public $altura;
+        public $gosta_de_pizza;
+        public $lista_de_pessoas_conhecidas;
+        public $classe_familia;
+        public $nulo;
+        
+        function caminharComAsPernas()
+        {
+            return;
+        }
+    }
+
+    class ClasseHumano
+    {
+        public $nome = 'Rafael';
+        public $idade = 18;
+        public $altura = 1.8;
+        public $gosta_de_pizza = true;
+        public $lista_de_pessoas_conhecidas = ['Mãe', 'Pai', 'Irmã'];
+        public $classe_familia = new ClasseFamilia;
+        public $nulo = null;
+        
+        function aumentarIdade()
+        {
+            $this->idade = $this->idade + 1;
+            echo('Agora ' . $this->nome . ' tem ' . $this->idade . ' anos.');
+        }
+    }
+
+    class ClasseHumano
+    {
+        private $nome;
+        private $idade;
+
+        function __construct($nome, $idade)
+        {
+            $this->nome = $nome;
+            $this->idade = $idade;
+        }
+
+        function mostrarIdade()
+        {
+            echo('A pessoa ' . $this->nome . ' tem ' . $this->idade . ' anos.');
+        }
+    }
+
+    // Herança de classes
+
+    class Animais
+    {
+        public $especie;
+        public $peso;
+
+        public function verEspecie()
+        {
+            echo('Este animal é da espécie ' . $this->especie);
+        }
+    }
+    class Mamifero extends Animais
+    {
+        public $quantidade_de_pernas;
+        public $tem_pelo;
+
+        public function verPernas()
+        {
+            echo('Este mamífero tem ' . $this->quantidade_de_pernas . ' pernas');
+        }
+    }
+    $teste = new Mamifero();
+    $teste->especie = 'Testando';
+    $teste->quantidade_de_pernas = 4;
+    $teste->verEspecie();
+    echo("\n");
+    $teste->verPernas();
+
+Override:
+    class Animal
+    {
+        function mover()
+        {
+            echo('O animal está se movendo');
+        }
+    }
+    class Mamifero extends Animal
+    {}
+    class Peixe extends Animal
+    {
+        function mover()
+        {
+            echo('O peixe está se movendo');
+        }
+    }
+    $teste_1 = new Animal();
+    $teste_2 = new Mamifero();
+    $teste_3 = new Peixe();
+    $teste_1->mover();
+    $teste_2->mover();
+    $teste_3->mover();
+
+Override do construtor:
+    class Retangulo
+    {
+        public $altura;
+        public $largura;
+
+        function __construct($l, $a)
+        {
+            $this->largura = $l;
+            $this->altura = $a;
+        }
+
+        public function calcularArea()
+        {
+            return $this->largura * $this->altura;
+        }
+    }
+    class Quadrado1 extends Retangulo
+    {
+        function __construct($l)
+        {
+            $this->largura = $l;
+            $this->altura = $l;
+        }
+    }
+    class Quadrado2 extends Retangulo
+    {
+        function __construct($l)
+        {
+            parent::__construct($l, $l);
+        }
+    }
+    class Quadrado3 extends Retangulo
+    {
+        function __construct($l)
+        {
+            Retangulo::__construct($l, $l);
+        }
+    }
+
+Impedir que uma classe pai passe uma propriedade ou método ao filho:
+    final class Animal
+    {
+        final function mover()
+        {
+            echo('O animal está se movendo');
+        }
+    }
+    class Mamifero extends Animal
+    {}
+    class Peixe extends Animal
+    {
+        function mover()
+        {
+            echo('O peixe está se movendo');
+        }
+    }
+
+Classes Estáticas:
+    Class Operacoes
+    {
+        static $valor_1;
+        static $valor_2;
+        static function adicionar()
+        {
+            return self::$valor_1 + self::$valor_2;
+            // return Operacoes::$valor_1 + Operacoes::$valor_2; // Forma alternativa
+        }
+    }
+    Operacoes::$valor_1 = 10;
+    Operacoes::$valor_2 = 20;
+    echo(Operacoes::adicionar());
+
+Criar classe que abriga somente um grupo de funções:
+    trait MinhasHabilidades
+    {
+        public function falar()
+        {
+            echo('falando');
+        }
+
+        public function andar()
+        {
+            echo('andando');
+        }
+    }
+    class Humano
+    {
+        use MinhasHabilidades;
+    }
+    $teste = new Humano();
+    $teste->falar();
+
+
+
+Verificar se um valor é numérico:
+    if (is_numeric('teste'))
+    {
+        echo('É numérico');
+    } else {
+        echo('Não é numérico');
+    }
+
+Formatar um número, parecido com valor monetário:
+    $numero = 1234.568;
+    // $numero = 34;
+    $numero_de_casas_decimais = 2;
+    $string_casas_decimais = ',';
+    $string_casas_milhares = '.';
+    echo( number_format($numero, $numero_de_casas_decimais, $string_casas_decimais, $string_casas_milhares) );
+    
+
+Sortear um número:
+    // rand(int $min, int $max) : int
+    rand(1, 20);
+
+
+
+Verificar em qual linha do código está:
+    echo( __LINE__ );
+
+Verificar em qual caminho de arquivo está sendo executado:
+    echo( __FILE__ );
+
+Verificar qual o caminho até a pasta em que está sendo executado:
+    echo( __DIR__ );
+
+Verificar em qual function está executando:
+    function teste() {
+        echo( __FUNCTION__ );
+    }
+    teste();
+
+Verificar em qual Classe e método está executando:
+    class MinhaClasse
+    {
+        function indentificar(){
+            echo( __CLASS__ . "\n");
+            echo( __METHOD__ . "\n");
+        }
+    }
+    $a = new MinhaClasse();
+    $a->indentificar();
+
+
+
+Acessar scripts de php de outros arquivos:
+    include 'servidor.php'; // se não existir o arquivo permite o código continuar
+    require 'servidor.php'; // se não existir o arquivo o código gera um fatal error
+
+
+
+Para criar uma pasta:
+    // mkdir( string $pathname, int $mode = ?, bool $recursive = ?, resource $context = ? ): bool
+    // O parâmetro mode consiste em três números em octal especificando as restrições de acesso para o proprietário, grupo de usuário do proprietário e finalmente qualquer outro, nessa ordem. Cada número pode ser calculado pela adição das permissões necessárias para o alvo. O número 1 significa direito de execução, 2 significa direito de escrita, 4 significa direito de leitura. Some esses números para ter os direitos desejados. Você pode ler mais sobre os modos em sistemas UNIX com 'man 1 chmod' e 'man 2 chmod'.
+
+    mkdir(__DIR__ . '/pasta1/teste', 0777, true);
+
+Para excluir uma pasta:
+    // rmdir(string $dirname, resource $context = ?): bool
+
+    rmdir(dirname(__FILE__) . '/teste');
+
+Para adentrar um pasta, caso não esteja usando o caminho absoluto com o __DIR__:
+    chdir(__DIR__ . '/teste');
+    touch('teste.txt');
+
+Para editar a configuração de permissão de um arquivo:
+    //chmod(string $filename, int $mode): bool
+    mkdir('/teste', 0777, true);
+    $arquivo = fopen('/testando' . '.txt', 'w');
+    chmod('/teste/testando.txt', 0700);
+    fclose($arquivo);
+
+Para verificar se um arquivo ou pasta existe:
+    // file_exists(string $filename): bool
+    
+    $filename = '/caminho/para/arquivo.txt';
+    if (file_exists($filename)) {
+        echo "O arquivo $filename existe";
+    } else {
+        echo "O arquivo $filename não existe";
+    }
+
+@@@ Para editar o dono de um arquivo:
+    // chown(string $arquivo, mixed $usuario): bool
+    // Ler mais https://www.php.net/manual/pt_BR/function.chown.php
+
+@@@ Para editar o grupo do dono de um arquivo:
+    // chgrp(string $filename, mixed $group): bool
+    // Ler mais https://www.php.net/manual/pt_BR/function.chgrp.php
+
+Para criar um arquivo:
+    $arquivo = fopen(__DIR__ . '/teste/' . time() . '.txt', 'w'); // Cria se não tiver um criado e se tiver um já criado substitui
+    fclose($arquivo);
+
+    touch(__DIR__ . '/teste/' . time() . '.txt'); // Cria, se não tiver um criado
+    
+    $arquivo = fopen(__DIR__ . '/teste/' . 'teste.txt', 'a'); // Cria, se não tiver um criado
+    fclose($arquivo);
+    
+Para preencher o conteudo de um arquivo:
+    $arquivo = fopen(time() . '.txt', 'w');
+    fwrite($arquivo, 'Olá Mundo!' . PHP_EOL);
+    fwrite($arquivo, 'Teste de escrita no arquivo...' . PHP_EOL);
+    fclose($arquivo);
+
+Para ler o conteúdo de um arquivo:
+    $arquivo = fopen(__DIR__ . '/teste/teste.txt', 'r');
+    while (feof($arquivo) === false)
+    {
+        echo(fgets($arquivo));
+    }
+    fclose($arquivo);
+
+    $arquivo = file_get_contents(__DIR__ . '/teste/teste.txt');
+    echo($arquivo);
+
+    $arquivo = file(__DIR__ . '/teste/teste.txt');
+    // $arquivo = file(__DIR__ . '/teste/teste.txt', FILE_SKIP_EMPTY_LINES|FILE_IGNORE_NEW_LINES); // Para armazenar o arquivo em um array sem guardar linhas vazias e sem guardar as quebras de linha
+    print_r($arquivo);
+
+Verificar se todo o arquivo foi lido:
+
+    $arquivo = fopen(__DIR__ . '/teste/teste.txt', 'r');
+    for ($contador = 0; $contador < 10; $contador++)
+    {
+        echo(fgets($arquivo, 7));
+    }
+    if (!feof($arquivo)) {
+        echo "\nA leitura do arquivo não pôde ser completada\n";
+    }
+    fclose($arquivo);
+ 
+
+
+Passar parêmetros através do Command Line Interface (Powershell):
+    php script.php // $argv[0] = script.php
+    php script.php 100 'teste'
+    /*
+        $argv[0] = script.php;
+        $argv[1] = 100;
+        $argv[2] = 'teste';
+    */
+    echo $argc; // retorna a quantidade de parametros armazenados dentro do $argv
+
+
+
+
+Tempos à partir da era Unix:
+    // Site com todas as siglas chaves: https://www.php.net/manual/pt_BR/datetime.format.php
+    $data_atual = date('Y'); // 2023
+    $data_atual = date('y'); // 23
+    $data_atual = date('d-m-Y'); // 03-02-2023
+    $data_atual = date('d/m/Y'); // 03/02/2023
+    $data_atual = date('Y-m-d H:i:s'); 
+    echo('Teste: '. $data_atual . PHP_EOL);
+
+    // Número de segundos decorridos desde 1 de Janeiro de 1970
+    echo('Teste: '. time() . PHP_EOL);
+    // Número de microsegundos decorridos desde 1 de Janeiro de 1970
+    echo('Teste: '. microtime() . PHP_EOL);
+    echo('Teste: '. microtime(true) . PHP_EOL);
+
+Como usar datas:
+    $data_atual = new DateTime(); // Pega a data e hora atuais com base no servidor
+    
+    $data_atual->setDate(2002, 07, 13); // Você pode definir a data respectivamente com ano, mês e dia
+    $data_atual->setTime(23, 30, 54); // Você pode definir o horário respectivamente com hora, minuto, segundo e microsegundo, sendo os dois últimos opcionais
+
+    // Lembre-se que exite o $data_atual->modify(); que pode tanto add quanto subtrair dependendo da string passada como parâmetro
+    $data_atual->add(new DateInterval('P180D')); // Edita a variável da data_atual com a soma de 180 dias, calculando ano bissexto e tudo
+    $data_atual->add(new DateInterval('P180W')); // Edita a variável da data_atual com a soma de 180 semanas
+    $data_atual->add(new DateInterval('PT180H')); // Edita a variável da data_atual com a soma de 180 horas
+    $data_atual->add(new DateInterval('PT10H15M30S')); // Edita a variável da data_atual com a soma de 10 horas 15 minutos e 30 segundos
+
+    $data_atual->sub(new DateInterval('P180D')); // Edita a variável da data_atual com a subtração de 180 dias
+    $data_atual->sub(new DateInterval('P180W')); // Edita a variável da data_atual com a subtração de 180 semanas
+    $data_atual->sub(new DateInterval('PT180H')); // Edita a variável da data_atual com a subtração de 180 horas
+
+    // echo('Teste: '. $data_atual->format('Y-m-d H:i:s') . PHP_EOL);
+
+
+
+    $datas = [
+        '21-10-1998',
+        '12-09-1996',
+        '01-07-2001',
+        '08-12-2005',
+        '22-11-1987',
+    ];
+
+    foreach ($datas as $data) {
+        $d = DateTime::createFromFormat('d-m-Y', $data);
+        $d->add(new DateInterval('P180D'));
+        // echo( $d->format('Y-m-d') . PHP_EOL );
+    }
+
+
+
+
+    $data_divida = new DateTime();
+    $data_divida->setDate(1997, 03, 10);
+    $data_divida->setTime(23, 30);
+    $agora = new DateTime();
+    $intervalo = $data_divida->diff($agora); // Se o setTime não for definido ele não o calcula precisamente
+    // print_r($intervalo);
+
+Obter a data de sua localidade:
+    // Site para verificar todas as zonas de horário registradas e válidas para o php https://www.php.net/manual/pt_BR/timezones.php
+    $data_sao_paulo = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
+
+    // print_r( $data_sao_paulo );
+    echo('Data de São Paulo: ' . $data_sao_paulo->format('d-m-Y H:i:s'));
+
+
+
+
+Transformar cada valor associativo de um array em uma variável:
+    $funcionarios = [
+        'administrador' => 'Rafael',
+        'programador' => 'Ramos',
+        'secretario' => 'Rodrigo'
+    ];
+    extract($funcionarios);
+    echo( $administrador . PHP_EOL);
+    echo( $programador . PHP_EOL);
+    echo( $secretario . PHP_EOL);
+
+Contar a quantidade de valores dentro de um array:
+    $array = [2, 50, 8, 10, 9, 1];
+    count($array);
+
+Adicionar elementos ao início do array:
+    $array = [2, 50, 8, 10, 9, 1];
+    array_unshift($array, 3, 4, 5);
+
+Adicionar elementos ao fim do array:
+    $array = [2, 50, 8, 10, 9, 1];
+    array_push($array, 3, 4, 5);
+
+
+Retirar elementos do início do array:
+    $array = [2, 50, 8, 10, 9, 1];
+    $valor_retirado_do_array = array_unshift($array);
+
+Retirar elementos do fim do array:
+    $array = [2, 50, 8, 10, 9, 1];
+    $valor_retirado_do_array = array_pop($array);
+
+Verificar se um array associativo possui uma determinada chave:
+     $funcionarios = [
+        'administrador' => 'Rafael',
+        'programador' => 'Ramos',
+        'secretario' => 'Rodrigo'
+    ];
+    key_exists('administrador', $funcionarios);
+
+Verificar se um array associativo possui um determinado valor:
+    $funcionarios = [
+        'administrador' => 'Rafael',
+        'programador' => 'Ramos',
+        'secretario' => 'Rodrigo'
+    ];
+    in_array('Rafael', $funcionarios);
+
+Transformar um array de diversos valores com valores únicos:
+    $array = [
+        'teste', 'ok', 'rafael', 'lorem', 'ok', 'testando', 'teste ok'
+    ];
+    $array_com_valores_unicos = array_unique($array);
+
+Misturar os valores de um array, como um sistema de sorteamento:
+    $array = [
+        'teste', 'ok', 'rafael', 'lorem', 'testando', 'teste ok'
+    ];
+    $array_organizado_de_forma_diferente = shuffle($array);
+
+
+
+Como criar um cookie:
+    /* 
+        setcookie(
+            string $name,
+            string $value = "",
+            int $expires_or_options = 0,
+            string $path = "",
+            string $domain = "",
+            bool $secure = false,
+            bool $httponly = false
+        ): bool
+    */
+    echo('<h1> Testando a criação do cookie </h1>');
+    if(isset($_COOKIE['teste_cookie']))
+    {
+        echo('<p>Cookie já criado: ' . $_COOKIE['teste_cookie'] . '</p>');
+    } else {
+        setcookie('teste_cookie', (new DateTime('now', new DateTimeZone('America/Sao_Paulo')))->format('d-m-Y H:i:s') );
+        // Quando criamos um cookie ele é editado para poder alguns caracteres ficarem no formato da web, caso não queira essa conversão, use o código abaixo, porém saiba que ele pode retornar erro quando tiver um caractere indesejado são eles: ",; \t\r\n\013\014"
+        // setrawcookie('teste_cookie', (new DateTime('now', new DateTimeZone('America/Sao_Paulo')))->format('d-m-Y H:i:s') ); 
+    }
+    echo('<p>Fim do teste, verifique o inspecionador de elemento.</p>');
+
+    // Observação: um cookie só pode ser lido depois que ele foi criado e a pessoa acessa o site novamente ou acessa outro site
+
+Definir um tempo de vida de um cookie:
+    if(isset($_COOKIE['teste_cookie']))
+    {
+        echo('<p>Cookie já criado: ' . $_COOKIE['teste_cookie'] . '</p>');
+    } else {
+        // Cookie que irá expirar após um minuto, se não for definido ele configura o tempo para sessão, se fechar o navegador o cookie é excluído
+        setcookie(
+            'teste_cookie', 
+            'Cookie criado em ' . (new DateTime('now', new DateTimeZone('America/Sao_Paulo')))->format('d-m-Y H:i:s'),
+            time() + 60
+        );
+    }
+
+Excluir um cookie:
+    echo('Testando...' . '<br />');
+    if(isset($_COOKIE['teste_cookie']))
+    {
+        echo('<p>Cookie já criado: ' . $_COOKIE['teste_cookie'] . '</p>');
+        echo('<p>Eliminando o cookie...</p>');
+        setcookie('teste_cookie', null, -1);
+    } else {
+        setcookie(
+            'teste_cookie', 
+            'Cookie criado em ' . (new DateTime('now', new DateTimeZone('America/Sao_Paulo')))->format('d-m-Y H:i:s')
+        );
+    }
+
+
+
+
+
+Pegar o valor passado em uma queryString (na url):
+    $nome_teste = isset($_GET['nome']) ? $_GET['nome'] : '';
+
+Captar uma queryString com total segurança:
+    <?php
+
+    $teste = 'Esse texto não deveria ser apresentado';
+
+    if (isset($_GET['texto']))
+    {
+        $texto = ($_GET['texto']);
+        $mensagem = 'Texto passado na query string: ' . htmlspecialchars($texto); // impede que o html interprete como texto o que for informado
+        // $mensagem = 'Texto passado na query string: ' . ($texto); // Não deve ser usado
+    } else {
+        $mensagem = ('A queryString não foi definida!');
+    }
+
+    ?>
+
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Teste</title>
+    </head>
+    <body>
+        
+        <!-- 
+            Mensagens de teste para o sistema:
+                <script>window.alert('BUM');</script>
+                $teste
+                <\?php $teste ?>
+                Teste de quebra de linha: \n<br /> testando...
+                //
+                DESCRIBE DATABASE;
+        -->
+
+        <div>
+            <p>Mensagem do sistema: <?php echo($mensagem); ?> </p>
+        </div>
+
+
+        <div>
+            <form action="#" method="GET">
+                <div>
+                    <label for="id_texto">Insira um texto:</label>
+                    <!-- <input type="text" name="texto" id="id_texto"> -->
+                    <textarea name="texto" id="id_texto" cols="30" rows="10"></textarea>
+                </div>
+                <div>
+                    <button type="submit" title="Enviar Formulário">Enviar</button>
+                </div>
+            </form>
+        </div>
+
+    </body>
+    </html>
+
+Redirecionar para outra url ou arquivo:
+    header('Location: ' . '' . '/../teste.txt'); // @@@ verificar por que o DIRNAME não pode ser colocado na concatenação
+
+    function redirect_by_path($path)
+    {
+        $redirect = substr(strtr(realpath($path), '\\', '/'), strlen($_SERVER['DOCUMENT_ROOT']));
+        header("location: $redirect");
+        die();
+    }
+    redirect_by_path(__DIR__ . '/../404.php');
+
+Verificar se uma chamada foi feita por post:
+    if ($_SERVER['REQUEST_METHOD'] != 'POST')
+    {
+        die('Acesso negado|');
+    }
+
+    if (!isset($_POST['usuario']))
+    {
+        header('Location: teste.php');
+    }
+    $usuario = htmlspecialchars($_POST['usuario']);
+    echo('Teste: ' . $usuario);
+
+
+
+
+
+Tratar o recebimento de arquivos:
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Teste</title>
+    </head>
+    <body>
+        <div>
+
+            <form action="/teste/testando" method="POST" enctype="multipart/form-data">
+                <div>
+                    <label for="id_file">Arquivo:</label>
+                    <input type="file" name="name_file" id="id_file" value="" required="required" accept="image/webp, image/png" multiple="multiple" />
+                    <!--
+                        // Para poder adicionar múltiplos arquivos 
+                        <input type="file" name="name_file" id="id_file" value="" required="required" accept="image/webp, image/png" multiple="multiple" />
+
+                        // @@@ apesar de estar com o multiple, não estou conseguindo no php validar diversos arquivos
+                    -->
+                </div>
+                <div>
+                    <button type="submit" title="Enviar formulário">Enviar</button>
+                </div>
+
+            </form>
+        </div>
+    </body>
+    </html>
+
+    <?php
+
+        $arquivamento_permitido = false;
+        
+        if ($arquivamento_permitido)
+        {
+            if (
+                // Verifica as extenções
+                ($_FILES['name_file']['type'] == 'image/png' 
+                || $_FILES['name_file']['type'] == 'image/webp')
+                // Verifica o tamanho
+                && ($_FILES['name_file']['size'] > 5000) 
+                // Verifica a largura
+                && (getimagesize($_FILES['name_file'])[0] > 0 && getimagesize($_FILES['name_file'])[0] < 200)
+                // Verifica a altura
+                && (getimagesize($_FILES['name_file'])[1] > 0 && getimagesize($_FILES['name_file'])[1] < 200)
+            )
+            {
+                move_uploaded_file($_FILES['name_file']['tmp_name'], 'uploads/' . $_FILES['name_file']['name']);
+            }
+            
+        }
+    ?>
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Testando</title>
+    </head>
+    <body>
+        <div>
+
+            <pre>
+                <?php 
+                    print_r($_FILES);
+                ?>
+            </pre>
+
+
+            <p><a href="/teste">Voltar</a></p>
+
+
+        </div>
+    </body>
+    </html>
+
+Usar sessions:
+    session_start();
+
+    $_SESSION['valor'] = 1000;
+    $_SESSION['usuario'] = htmlspecialchars('João<br>ok');
+
+    echo( $_SESSION['usuario'] );
+
+Terminar/Destuir/Excluir uma session:
+    session_destroy();
+
+Limpar o conteúdo de uma session:
+    session_unset();
+
+
+
+
+
+Se conectar com um banco de dados:
+    try 
+    {
+        $conexao_yourbd = new PDO (
+            'mysql:host=' . yourbd['host'] . ';dbname=' . yourbd['dbname'] . ';charset=' . yourbd['charset'],
+            yourbd['username'],
+            yourbd['password']
+        );
+        
+        echo('Connected to ' . yourbd['dbname'] . ' at ' . yourbd['host'] . ' successfully.');
+    } catch (PDOException $pe) 
+    {
+        die('Could not connect to the database: ' . $pe->getMessage());
+    }
+
+    $dados = $conexao_yourbd->query('SELECT * FROM cliente');
+    // O query se refere ao tipo de execução que será feito no banco, neste caso iremos utilizar um código de texto que deve ser interpretado pelo banco
+
+    $clientes = $dados->fetchAll(PDO::FETCH_ASSOC);
+
+    print_r($clientes);
+
+    // ------------- Ver todas as linhas de uma tabela
+    // $dados = $banco_de_dados->query("SELECT * FROM cliente");
+    // $clientes = $dados->fetchAll(PDO::FETCH_ASSOC); // @@@ Pouco recomendado o uso do fetchAll devido a guardar toda a informação do banco diretamente de uma vez, o que pode acabar estourando a capacidade da memória RAM
+    // print_r($clientes);
+
+
+    // ------------- Inserir um dado na tabela
+    // $banco_de_dados->query("INSERT INTO cliente (nome) VALUES ('Francisco')");
+
+
+    // ------------- Atualizar um dado da tabela
+    // $banco_de_dados->query("UPDATE cliente SET nome = 'Teste' WHERE id_cliente = 3");
+
+
+    // ------------- Deletar um dado da tabela
+    // $banco_de_dados->query("DELETE FROM cliente WHERE id_cliente = 3");
+
+Forma segura de registrar um dado tipo string vinda do usuário no banco de dados:
+    // Imagine um valor que veio de uma query (um valor que o usuário informou ao enviar um formulário)
+
+    // $teste = 'Foi hackeado';
+    // $cliente_nome = 'teste hackeando o php: $teste';
+
+    // $cliente_nome = "teste hackeando o banco de dados'); CREATE TABLE falha_na_seguranca_possibilidades_de_hackeamento (id int PRIMARY KEY AUTO_INCREMENT);";
+
+    // $cliente_nome = 'Hack no HTML:<script>alert("hackeado");</script>';
+
+    // $comando = $banco_de_dados->prepare("INSERT INTO cliente (nome) VALUES ( :nome );");
+    // $comando->execute([
+    //     ':nome' => htmlspecialchars($cliente_nome)
+    // ]);
+
+    $dados = $banco_de_dados->query("SELECT * FROM cliente");
+    $clientes = $dados->fetchAll(PDO::FETCH_ASSOC);
+    echo('<pre>');
+    print_r($clientes);
+    echo('</pre>');
+
+
+
+
+
+
+
+
+Criptografar dados:
+    define('AES_KEY', 'v3MwZvA72adsLUi5pkoQjxUcAoXM9pHt'); // Chave com 32 caracteres
+    define('AES_IV', 'QzD4N4NDgabUyuDg'); // Chave com 16 caracteres
+
+    function aesEncriptar($valor) : string
+    {
+        return bin2hex(openssl_encrypt($valor, 'aes-256-cbc', AES_KEY, OPENSSL_RAW_DATA, AES_IV));
+    }
+    function aesDesencriptar($valor) : string|array
+    {
+        // Verifica se o valor de entrada é compatível com o hex2bin
+        try {
+            $entrada = @hex2bin($valor);
+            
+            if(false === $entrada) {
+            throw new Exception("Invalid hexedecimal value.");
+            }
+        } catch(Exception $e) {
+            return $descriptografia = ['error' => true];
+        }
+
+        // Descriptografa o valor
+        $descriptografia = openssl_decrypt(hex2bin($valor), 'aes-256-cbc', AES_KEY, OPENSSL_RAW_DATA, AES_IV);
+        
+        if($descriptografia === false)
+        {
+            return $descriptografia = ['error' => true];        
+        } else {
+            return $descriptografia;
+        }
+    }
+
+    echo('Teste de criptografia:' . PHP_EOL);
+
+    $valores = ['teste', false, 'false', 0, '0'];
+    print_r($valores);
+
+
+
+    require_once(__DIR__ . '/../configuracoes/configuracoes.php');
+
+    $valores_criptografados = [];
+    foreach($valores as $valor)
+    {
+        $valores_criptografados[] = aesEncriptar($valor);
+    }
+    print_r($valores_criptografados);
+
+
+
+    $valores_descriptografados = [];
+    foreach($valores_criptografados as $valor)
+    {
+        $valores_descriptografado = aesDesencriptar($valor);
+        if ($valores_descriptografado !== false)
+        {
+            $valores_descriptografados[] = $valores_descriptografado;
+        }
+    }
+    print_r($valores_descriptografados);
+    
+
+
+Criptografar senhas:
+    $senha = 'senha123';
+
+    $teste_criptografado = password_hash($senha, PASSWORD_BCRYPT);
+
+    echo('<pre>');
+    echo($teste_criptografado);
+    echo('</pre>');
+
+    if (password_verify($senha, '$2y$10$MWJDvX.2DxPlduKPElk9xuGAYlQ8gGjQKz8q2kB8QAE8VQa.AA2Pi'))
+    {
+        echo('Login correto');
+    }
+
+
+
+
+

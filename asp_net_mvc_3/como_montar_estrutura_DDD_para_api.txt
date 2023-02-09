@@ -1,0 +1,118 @@
+Passos para construir um projeto de api
+1 - Criar uma Blank Solution (projeto do zero)
+2 - Adicionar 4 Pastas: Application (responsável por fazer as solicitações via url serem atendidas), Infra (responsável por mapear o banco de dados), Services (responsável por verificar se um pedido feito pela Application pode ser acessado pela Infra) e Domain (responsável por definir os modelos de envio dos dados e conectar as outras 3 pastas)
+3 - Adicionar dentro da pasta Infra a pasta Data (aqui serão feitas models iguais as tabelas do banco de dados)
+4 - Na pasta Application adicionar o projeto "ASP.NET Core Web Application" com nome "API" do tipo "API"
+5 - Na pasta Domain, adicionar projeto "Class Libary (.NET Standard)" com nome "Domain"
+6 - No projeto Domain Adicionar 4 pastas: Entities (Models conteudos de retorno), Error (pasta que guarda arquivos que contem repostas de erro no caso de um pedido não poder ser efetuado), Interfaces (conectará os projetos) e Models (Modelos de retorno)
+7 - No projeto Domain, na pasta Interfaces, criamos outras 2 pastas a Repository (Chamadas no banco) e a Service (regras de solicitação)
+8 - Na pasta Services, adicionar projeto "Class Libary (.NET Standard)" com nome "Services"
+9 - Na pasta Infra, na pasta Data adicionar projeto "Class Libary (.NET Standard)" com nome "Infra.Data"
+10 - No projeto "Infra.Data" adicionar pasta "Repositories"
+11 - Nos projetos Class Library apagar arquivos "Class1.cs"
+12 - Nos projetos Infra.Data, Services e Application, clique com o botão direito em "Dependencies", marque a caixa "Domain" e confirme
+
+Pronto, até aqui temos a base da estrutura, agora vamos preencher como se quisessemos realizar um pedido a API
+
+1 - No projeto Domain, na pasta Error, adicionar um novo item "Class", chamado "MessageType.cs"
+1.1 - Dentro do namespace, o seguinte código deve ser escrito:
+public enum MessageType : int
+    {
+        [Description("Usuário ou Senha Inválidos")]
+        UsuarioSenhaInvalido = 1001,
+
+        [Description("CPF já cadastrado")]
+        CpfExistente = 1002,
+    }
+1.2 - Nas primeiras linhas do arquivo, escreva o seguinte código: "using System.ComponentModel;"
+
+2 - No projeto Domain, na Pasta Models, adicionar um novo item "Class", chamado "ApiResponse.cs"
+2.1 - Dentro do namespace, o seguinte código deve ser escrito:
+public class ApiResponse<T> where T : class
+    {
+        public ApiResponse()
+        {
+        }
+
+        public ApiResponse(T obj)
+        {
+            this.Content = obj;
+            this.StatusCode = (int)HttpStatusCode.OK;
+            this.ErrorMessage = string.Empty;
+        }
+
+        public ApiResponse(T obj, HttpStatusCode statusCode)
+        {
+            this.Content = obj;
+            this.StatusCode = (int)statusCode;
+            this.ErrorMessage = string.Empty;
+        }
+
+        public ApiResponse(Error.MessageType obj)
+        {
+            this.StatusCode = (int)obj;
+            this.ErrorMessage = ((System.ComponentModel.DescriptionAttribute)(obj.GetType().GetField(obj.ToString())).GetCustomAttributes(typeof(System.ComponentModel.DescriptionAttribute), false).SingleOrDefault()).Description;
+        }
+
+        public int StatusCode { get; set; }
+        public T Content { get; set; }
+        public string ErrorMessage { get; set; }
+    }
+2.2 - No início do arquivo insira o "using System.Net;" e o "using System.Linq;"
+
+3 - Dentro do projeto Domain, dentro da pasta Entities, crie um novo item "Class"
+3.1 - Dentro do namespace coloque como "public class"
+3.2 - Monte a model
+
+4 - No projeto API, no arquivo appsettings.json, criar o nome para acesso ao banco de dados
+
+5 - No projeto Infra.Data, na pasta Repositories adicionar uma nova classe "Class" com o sufixo Repository.cs
+5.1 - Torne a class em "public class"
+5.2 - Instale o no package manager Microsoft.Extensions.Configuration.Abstractions e nas linhas iniciais escreva o código: "using Microsoft.Extensions.Configuration;"
+5.3 - Traga as configurações do appsettings para ter acesso ao banco
+	private readonly IConfiguration _configuration;
+        public DuvidasFrequentesRepository(IConfiguration configuration)
+        {
+            this._configuration = configuration;
+        }
+5.4 - Monte o código para ter funções que alteram o banco
+
+6 - No projeto Domain, na pasta Interfaces, na pasta Repository, crie um novo item "Class", o nome deve iniciar com "I" maiúsculo e depois "Repository.cs"
+6.1 - Troque o "class" por "public interface"
+6.2 - Escreva a chamada da função do passo 5.4
+
+7 - No final da linha do passo 5.1 adcione o código " : IDuvidasFrequentesRepository"
+
+8 - No projeto Services adicionar uma nova classe "Class" com o sufixo Service.cs
+8.1 - Torne a class em "public class"
+8.2 - Traga as chamadas do "I" + nome que colocou do repositorio + "Repository", exemplo:
+	private readonly IDuvidasFrequentesRepository _duvidasFrequentesRepository;
+        public DuvidasFrequentesService(IDuvidasFrequentesRepository duvidasFrequentesRepository)
+        {
+            _duvidasFrequentesRepository = duvidasFrequentesRepository;
+        }
+8.3 - Escreva o código de regra da chamada
+
+9 - No projeto Domain, na pasta Interfaces, na pasta Service, crie um novo item "Class", o nome deve iniciar com "I" maiúsculo e depois "Service.cs"
+9.1 - Troque o "class" por "public interface"
+9.2 - Escreva a chamada da função do passo 8.3
+
+10 - No final da linha do passo 8.1 adcione o código " : IDuvidasFrequentesService"
+
+11 - Na pasta "Application", no projeto "API", na pasta Controllers, criar uma Controller "MVC Controller - Empty"
+11.1 - Adicionar dentro do "namespace" o código:
+[ApiController]
+[Route("[controller]")]
+Estas duas linhas de código configuram a rota, para ser acessado na url chamando a controller
+11.2 - Em frente a "public class" adicionar ao final da linha o código:
+ : ControllerBase
+Este trexo de código configura para as Actions que você programar retonarem em modelo api
+11.3 - Importe a Service referente a Controller:
+	private readonly IDuvidasFrequentesService _duvidasFrequentesService;
+        public DuvidasFrequentesController(IDuvidasFrequentesService duvidasFrequentesService)
+        {
+            _duvidasFrequentesService = duvidasFrequentesService;
+        }
+11.4 - Crie a função action
+
+12 - Na pasta "Application", no projeto "API", no arquivo Startup, dentro do bloco de "ConfigureServices", adicione globalmente as interfaces Service e Repository

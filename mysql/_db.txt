@@ -1,0 +1,349 @@
+
+
+
+Criar um banco de dados:
+    CREATE DATABASE nome_do_banco_de_dados;
+
+Ver bancos de dados existentes:
+    SHOW DATABASES;
+    
+Usar um banco de dados:
+    USE nome_do_banco_de_dados;
+
+@@@ Alterar o nome de um banco de dados:
+    // Efetivamente na versão atual não é possível renomear um banco de dados via código
+    // O que se pode fazer é criar um novo banco de dados com o nome desejado e então copiar os dados de dentro do outro banco para este novo 
+    // Antes de utilizar este método verifique se dentro de uma interface gráfica MySQL não possui uma opção para realizar esta ação, o phpMyAdmin permite fazendo o percurso -> Selecionar banco -> Operacões -> Renomear banco de dados para
+
+    // @@@ Verificar se colunas com relacionamento de chaves permite a alteração
+
+    CREATE DATABASE nome_do_novo_banco;
+    RENAME TABLE nome_do_banco_atual.nome_da_tabela_1 TO nome_do_novo_banco.nome_da_tabela_1;
+
+@@@ Ver configurações do banco de dados:
+    // @@@ Como enxergar os dados que ele tem pré-formatado como por exemplo qual idioma interpreta, qual configurção base passa para as tabelas e assim por diante
+
+Excluir um banco de dados:
+    DROP DATABASE nome_do_banco_de_dados;
+
+
+
+
+Criar uma tabela:
+
+    // Tipos de dados para colunas
+
+    CREATE TABLE nome_da_tabela_1 (
+        id_nome_da_tabela_1 INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+        
+        texto_com_quantidade_de_caracteres_fixo CHAR(255),
+        texto_com_quantidade_de_caracteres_variados VARCHAR(255),
+        texto_com_grandes_quantidade_de_caracteres_variados MEDIUMTEXT,
+
+        booleano_zero_e_igual_falso_qualquer_outro_e_true BOOL,
+
+        inteiro_com_capacidade_de_2_bilhoes_negativo_e_positivo INT,
+        inteiro_com_capacidade_de_4_bilhoes_positivo INT UNSIGNED,
+        inteiro_com_capacidade_de_9_quintilhoes_negativo_e_positivo BIGINT,
+        decimais DECIMAL(65, 30),
+
+        data_yyyy_mm_dd DATE,
+        data_e_hora_yyyy_mm_dd_hh_mm_ss DATETIME,
+        data_e_hora_preenchido_automaticamente_ao_inserir_esta_linha DATETIME DEFAULT CURRENT_TIMESTAMP,
+        data_e_hora_preenchido_automaticamente_ao_atualizar_esta_linha DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    );
+
+    // Cada caracter ocupa 1 byte na memória = 8 bits
+    // Cada inteiro ocupa 4 bytes na memória = 32 bits
+    // Cada grande inteiro ocupa 8 bytes na memória = 32 bits
+    // Um decimal ocupa uma memória variada de acordo como for definido os seus parâmetros.
+    // Padrão para armazenar um valor monetário é DECIMAL(19, 4) o que ocupa cerca de 9 bytes
+
+    // @@@ CURRENT_TIMESTAMP não pegando o valor da era unix e sim do local do servidor
+
+Ver tabelas existentes:
+    SHOW TABLES;
+
+Ver as configurações de uma tabela:
+    DESCRIBE nome_da_tabela_1;
+
+@@@ Ver as chaves configuradas na tabela:
+    SHOW INDEX FROM nome_da_tabela_1;
+
+@@@ Ver como as chaves estão se relacionando com outras tabelas:
+    SELECT *
+    FROM information_schema.KEY_COLUMN_USAGE
+    WHERE TABLE_NAME = 'nome_da_tabela_1';
+
+Alterar o nome de uma tabela:
+    RENAME TABLE nome_da_tabela_1 TO nome_da_tabela_2;
+
+Excluir uma tabela:
+    DROP TABLE nome_da_tabela_1;
+
+
+
+
+
+Resetar a contagem do id que possui AUTO_INCREMENT:
+
+    NÃO DEVEMOS MUDAR O AUTO_INCREMENT!!!!!
+
+    Por que? Um id é um registro único caso você mude a contagem de um AUTO_INCREMENT esse registro é como se fosse modificado, o que não é saudável para o sistema, além de poder causar incoêrencias de backups de bancos de dados, problemas de relacionamento de chaves estrangeiras e primárias compostas.
+
+
+
+
+
+
+
+Adicionar uma ou mais linhas em uma tabela:
+    
+    INSERT INTO nome_da_tabela_1 (
+        texto_com_quantidade_de_caracteres_fixo,
+        texto_com_quantidade_de_caracteres_variados,
+        texto_com_grandes_quantidade_de_caracteres_variados,
+
+        booleano_zero_e_igual_falso_qualquer_outro_e_true,
+
+        inteiro_com_capacidade_de_2_bilhoes_negativo_e_positivo,
+        inteiro_com_capacidade_de_4_bilhoes_positivo,
+        inteiro_com_capacidade_de_9_quintilhoes_negativo_e_positivo,
+        decimais,
+
+        data_yyyy_mm_dd,
+        data_e_hora_yyyy_mm_dd_hh_mm_ss
+    ) VALUES (
+        'Teste com char: Acentuação e caracter especial!',
+        'Teste com varchar: Acentuação e caracter especial!',
+        'Teste com mediumtext: Acentuação e caracter especial!',
+
+        1,
+
+        12,
+        12,
+        123,
+        1.23,
+
+        '2002-07-13',
+        '2002-07-13 08:30:56'
+    ), (
+        'Teste para o banco: CREATE TABLE falha_na_seguranca_possibilidades_de_hackeamento (id int )',
+        'Teste para o PHP: echo(\'Teste de segurança, possibilidade de hackeamento\'); die();',
+        'Teste para o HTML: <h1>Teste de mensagem, não deve ocorrer um alert!</h1> <script>window.alert(\'Teste de segurança, possibilidade de hackeamento\');</script>',
+
+        0,
+
+        45,
+        54,
+        654,
+        98765,
+
+        '2002-07-13',
+        '2002-07-13 08:30:56'
+    ), (
+        'Teste para o banco: CREATE TABLE falha_na_seguranca_possibilidades_de_hackeamento (id int )',
+        'Teste para o PHP: echo(\'Teste de segurança, possibilidade de hackeamento\'); die();',
+        'Teste para o HTML: <h1>Teste de mensagem, não deve ocorrer um alert!</h1> <script>window.alert(\'Teste de segurança, possibilidade de hackeamento\');</script>',
+
+        3,
+
+        1,
+        2,
+        3,
+        4,
+
+        '2002-07-13',
+        '2002-07-13 08:30:56'
+    );
+
+    INSERT INTO nome_da_tabela_1 (
+        texto_com_quantidade_de_caracteres_fixo
+    ) VALUES ('1'), ('2'), ('3'), ('4'), ('5'), ('6'), ('7'), ('8'), ('9');
+
+Ver todas as linhas de uma tabela:
+    SELECT * FROM nome_da_tabela_1;
+
+Excluir todas as linhas de uma tabela:
+    TRUNCATE nome_da_tabela_1; // Além de deletar ele reestarta a estruturação da tabela, então por exemplo o AUTO_INCREMENT volta para o valor 1
+
+    DELETE FROM nome_da_tabela_1 WHERE id_nome_da_tabela_1 != 0;
+
+    
+
+Ver todas as linhas de uma tabela onde uma regra for true:
+
+    /* -------------------------------------------------- */
+    SELECT * FROM nome_da_tabela_1
+    WHERE (id_nome_da_tabela_1 = 2);
+
+
+
+    /* -------------------------------------------------- */
+    SELECT * FROM nome_da_tabela_1
+    WHERE (id_nome_da_tabela_1 = 2) OR (id_nome_da_tabela_1 = 3);
+
+
+
+    /* -------------------------------------------------- */
+    SELECT * FROM nome_da_tabela_1
+    WHERE (id_nome_da_tabela_1 = 2) AND (data_e_hora_yyyy_mm_dd_hh_mm_ss > '2002-07-13 08:30:00');
+
+
+
+    /* -------------------------------------------------- */
+    SELECT * FROM nome_da_tabela_1
+    WHERE NOT (id_nome_da_tabela_1 = 2);
+
+
+
+    /* -------------------------------------------------- */
+    SELECT * FROM nome_da_tabela_1
+    WHERE 
+    NOT
+    (
+        ((id_nome_da_tabela_1 = 2) OR (id_nome_da_tabela_1 = 5)) 
+        AND 
+        (data_e_hora_yyyy_mm_dd_hh_mm_ss > '2002-07-13 08:30:00')
+    );
+
+
+
+    /* -------------------------------------------------- */
+    SELECT * FROM nome_da_tabela_1
+    WHERE id_nome_da_tabela_1 = (
+        SELECT id_nome_da_tabela_1 FROM nome_da_tabela_1
+        WHERE id_nome_da_tabela_1 = 2
+    );
+
+@@@ Ver todas as linhas de uma tabela com somente algumas colunas:
+
+Ver todas as linhas de uma tabela em ordem crescente ou decrescente de acordo com uma coluna:
+
+    /* -------------------------------------------------- */
+    SELECT * FROM nome_da_tabela_1
+    ORDER BY id_nome_da_tabela_1 DESC;
+
+    
+    
+    /* -------------------------------------------------- */
+    SELECT * FROM nome_da_tabela_1
+    ORDER BY id_nome_da_tabela_1 ASC;
+
+
+
+    /* -------------------------------------------------- */
+    SELECT * FROM nome_da_tabela_1
+    ORDER BY texto_com_quantidade_de_caracteres_variados DESC;
+
+@@@ Ver um número específico de linhas de uma tabela:
+
+@@@ Alterar uma linha em uma tabela:
+
+
+
+
+
+@@@ Como adicionar uma coluna:
+
+@@@ Como mudar o tipo de dado da coluna:
+
+@@@ Como mudar o nome da coluna:
+
+@@@ Ver o menor e o maior valor de uma coluna
+
+@@@ Como excluir uma coluna:
+
+
+
+
+@@@ Ver privilegios de administração do banco:
+    CREATE USER 'AAA01'@'%' IDENTIFIED BY 'kamisama123';
+    GRANT ALL PRIVILEGES ON MYDATABASE.* TO 'AAA01'@'%';
+    exit;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@@@ Pesquisar:
+    Sobre o ENUM como tipo de dado de coluna e associação de chaves com ON UPDATE RESTRICT ON DELETE RESTRICT/CASCADE
+        create table doador(
+            IDDoador INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+            Nome varchar(150) NOT NULL,
+            DataNascimento DATE NOT NULL,
+            CPF CHAR(14) NOT NULL,
+            RG char(8) NOT NULL,
+            TipoSanguineo ENUM('A', 'B', 'AB', 'O') NOT NULL,
+            FatorRH ENUM('-','+') NOT NULL,
+            NomePai varchar(150),
+            NomeMae varchar(150),
+            Telefone char(11),
+            Celular char(11) NOT NULL,
+            Sexo enum('M','F') NOT NULL,
+            IDEndereco INTEGER,
+            NroEndereco varchar(10) NOT NULL,
+            FOREIGN KEY(IDEndereco) REFERENCES endereco (IDEndereco) ON UPDATE RESTRICT ON DELETE RESTRICT
+        );
+    Sobre trigger e procedure
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+@@@ guardar valor criptografado:
+    Sabe dizer até quantas vezes maior pode ficar uma string de entrada quando passa pelo AES_ENCRYPT do banco de dados?
+    @@@ A coluna tem que ser do tipo VARBINARY e normalmente tem que ocupar o dobro do que ocuparia a string com um varchar
+    // Um texto de até 8 mil caracteres ok
+    // valor máximo de um varbinary(65450)
+    CREATE TABLE teste (
+        id INT PRIMARY KEY AUTO_INCREMENT, 
+        nome VARBINARY(100), 
+        telefone VARBINARY(50) 
+    );
+
+    INSERT INTO teste (nome, telefone) 
+    VALUES 
+    ( 
+        AES_ENCRYPT("Rafael", UNHEX(SHA2("senha_hash", 512))), 
+        AES_ENCRYPT("123456", UNHEX(SHA2("senha_hash", 512))) 
+    );
+
+    SELECT 
+    AES_DECRYPT(nome, UNHEX(SHA2("senha_hash", 512))) nome, 
+    AES_DECRYPT(telefone, UNHEX(SHA2("senha_hash", 512))) telefone 
+    FROM teste;
+
+    
+
+
+
+@@@ ver quanto da memória cada registro está ocupando:
+    
+    Estou usando Oracle, para campos do tipo LOB é possivel obter os bytes desta forma:
+    select dbms_lob.getlength(CAMPO) data_size from TABELA
+
+    Para outros tipos de dados é possivel através da função LENGTHB:
+    select LENGTHB(CAMPO) data_size from TABELA
+
+
+
+

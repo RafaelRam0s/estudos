@@ -1,0 +1,71 @@
+
+
+
+Regras de um bom site
+    Informe o formato que ele trabalha, no caso de html5 !DOCTYPE
+
+    Informe o idioma da sua página, o sentido de leitura, o zoom com o qual a sua página aparece em dispositivos menores e um ícone
+
+    Defina para cada página do seu site um título, um meta description, keywords e author únicos
+
+    Referências de arquivo css no head e de javascript no footer
+
+    Nos arquivos css e javascript deixe somente o que irá utilizar, evite código morto
+
+    Garanta primeiro um texto padrão como sans-serif, serif ou monospace e depois o carregamento de uma webfont caso utilize outra família de fonte
+
+    Faça uma página de política de privacidade e termos de uso
+
+    Verifique se todas as páginas são responsivas
+
+    Tenha uma paleta de cores agradável
+
+    Não use documentos pesados para trabalhos leves (exemplo: imagem de 1400x1200 para ficar em um elemento de 400x300)
+
+    Algumas vezes um elemento no html carrega somente depois que o arquivo é baixado, o que causa um deslocamento do layout html, evite isso definindo width e height
+
+    Teste todas as funcionalidades do site
+
+    Configure um arquivo robots.txt e um sitemap.xml na rota principal para leitores de tela
+
+    Minifique seus arquivos
+
+    Deixe elementos estáticos, como imagens de logo, arquivos css e js, em cache
+
+    Tenha uma página de erro, caso alguém coloque uma url incorretamente é bom que seja redirecionada para a tela de erro do seu site, pois assim você pode manter a pessoa dentro do sistema, se deixar o padrão do navegador ela pode desistir de visitar suas páginas
+
+    Se utilizar cookies, informe que você utilize para o usuário
+
+    Se utilizar imagens cuidado com os direitos de imagem
+
+    Tenha um motor de template para não repetir código html do header e poder ter uma fácil manutenção
+
+    Personalize suas rotas para não ficar limitado à só conseguir achar seus arquivos usando o caminho relativo de pastas
+
+    Obtenha um contrato SSL para oseu site ter certificação e ficar mais seguro
+
+    Tenha um serviço de CDN (por exemplo a Cloudflare) para um carregamento dinamico das suas páginas para o cliente e proteção de ataques DDoS
+
+
+
+
+Como publicar seu site:
+    Ter uma pasta no seu computador para os códigos
+    Fazer um arquivo html (veja no W3schools)
+    Ter uma linguagem back-end para servidor ("Asp.Net Core MVC" ou "Node.js" ou "PHP")
+    Ter um editor de código (recomendo Visual Studio Code)
+    Comprar um nome de domínio (comprar a url basicamente, por exemplo existe o site www.exemplo.com essa parte "exemplo.com" é o nome de domínio e para obte-lo é preciso comprar em sites na internet, recomendo site https://registro.br/)
+    Contratar um servidor de hospedagem (basicamente o servidor vai armazenar os arquivos que você tem e quando alguém acessar o seu domínio ele irá carregar os arquivos para o visitante)
+    Comprar um certificado https (SSL) para o site
+    Ter software que fornece contato entre a sua máquina e o servidor (esses tipor de programas se chamam FTP, recomendo FileZilla)
+    Configurar o FileZilla para conectar com o servidor
+    Mandar arquivos do seu computador para o servidor
+    Ter um banco de dados (MySql, Sql Server, MariaDB, MongoDB)
+    Ter uma CDN (Cloudflare, Amazon AWS)
+
+
+
+
+
+
+
