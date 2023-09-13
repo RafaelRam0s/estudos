@@ -218,6 +218,8 @@ Ver todas as linhas de uma tabela onde uma regra for true:
 
 @@@ Ver todas as linhas de uma tabela com somente algumas colunas:
 
+
+
 Ver todas as linhas de uma tabela em ordem crescente ou decrescente de acordo com uma coluna:
 
     /* -------------------------------------------------- */

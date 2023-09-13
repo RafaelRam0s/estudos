@@ -1,0 +1,36 @@
+
+Linux Mint
+
+Saiba que o Linux Mint faz parte da distibuição Ubuntu
+
+Na virtual box se quiser redimencionar "Dispositivos > Inserir imagem de cd dos adicionais para Convidado" "Visualizar > Tela Virtual"
+
+Código para ver os arquivos e pastas locais:
+    ls
+
+Código para andar entre as pastas:
+    cd ./caminho_de_pastas
+    cd ../
+    cd ./arquivo.executar
+
+Código para instalar um programa 
+    sudo apt install ./nome_do_arquivo.deb
+
+Código para executar um executável
+    sudo ./nome_do_arquivo.run
+
+Código para atualizar o sistema (garanta que a sua rede não trave alguns links):
+    sudo apt update
+    sudo apt upgrade
+    
+Instalar dependencias para php 8
+    sudo apt install software-properties-common
+
+
+
+
+
+
+
+
+

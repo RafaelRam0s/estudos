@@ -1372,6 +1372,107 @@ Criptografar senhas:
     }
 
 
+Enviar e-mail:
+    <?php
+        ini_set( 'display_errors', 1 );
+        error_reporting( E_ALL );
 
+        try {
+
+            /* Versão 1 de envio de e-mail que deu certo: 
+
+                // $from = "rafael_ramos@rancode.com.br";
+                // $to = "rafael6otaku@gmail.com";
+                // $subject = "Teste de envio de e-mail por php";
+                // $message = "Corpo da mensagem no email. Isto é apenas um teste";
+                // $headers = "From:" . $from;
+                
+                // if (mail($to,$subject,$message, $headers))
+                // {
+                //     echo("O email deverá ter sido enviado.");
+                // } else {
+                //     echo("Falha no envio do email!");
+                // }
+                
+            */
+
+            
+            $from = "Rancode";
+            // $to = "rafael6otaku@gmail.com, teste1@rancode.com.br"; // Para enviar para mais de um destinatário
+            $to = "rafael6otaku@gmail.com";
+            $subject = "Teste de envio de e-mail por php";
+            $message = '
+            <!DOCTYPE html>
+            <html lang="pt-br">
+            <head>
+                <meta charset="UTF-8" />
+                <meta name="author" content="Rafael Ramos da Silva" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                
+                <link rel="license" href="/LICENSE" />
+                <link rel="icon" href="/assets/imagens/icones/icone_logo_r_16px.ico" type="image/x-icon" />
+                
+                <title>E-mail teste no html</title>
+            </head>
+            <body style="margin: 0px; font-family: monospace; border: 1px solid #000000;">
+            
+                
+                <div style="margin: 0px; font-family: monospace; border: 1px solid #000000;">
+                    <div style="background-color: #730d0d;">
+                        <div style="padding: 15px 10px 15px 10px; text-align: center;">
+                            <a href="https://www.rancode.com.br/home" style="font-size: 20px; color: #ffffff; font-weight: 800; border: 3px solid #ffffff; display: inline-block; padding: 1px; text-decoration: none;" target="_blank">
+                                RanCode
+                            </a>
+                            <p style="color: #ffffff;">Pathfinder 2e</p>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="background-color: #dedede; font-size: 1.2em; height: 100%; padding: 10px;">
+                            <h2>Confirmação de cadastro</h2>
+            
+                            <p>Clique no botão abaixo para confirmar sua conta e poder utilizar nossos serviços.</p>
+            
+                            <div style="display: block; width: 100%;">
+                                <a href="https://www.rancode.com.br/home?email_de_usuario_criptografado=teste123@gmail.html" style="display: block; margin: auto; width: 300px; background-color: #160cfc; color: white; text-align: center; padding: 10px; box-sizing: border-box; border-radius: 10px; text-decoration: none;" target="_blank">Confirmar cadastro</a>
+                            </div>
+                            
+                            <p><strong>Caso não tenha feito qualquer cadastro conosco, favor desconsiderar este e-mail.</strong></p>
+                        </div>
+                    </div>
+                    <div style="background-color: #2e0505;">
+                        <div style="padding: 15px 10px 15px 10px; text-align: center; color: #ffffff;">
+                            &#169; 2023 RanCode
+                        </div>
+                    </div>
+                </div> 
+            </body>
+            </html>
+            ';
+
+            // $cc = "teste3@rancode.com.br";
+            // $bcc = "teste2@rancode.com.br";
+            $cc = "";
+            $bcc = "";
+
+            $headers = "From: " . $from . "\r\n";
+            $headers .= "Cc: " . $cc . "\r\n";
+            $headers .= "Bcc: " . $bcc . "\r\n";
+            $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+
+            if (mail($to, $subject, $message, $headers, "-f " . $from)) {
+                echo "E-mail enviado com sucesso!";
+            } else {
+                echo "Falha ao enviar o e-mail.";
+            }
+
+            
+
+        } catch (Exception $e)
+        {
+            echo("Erro no envio do email!");
+        }
+        
+
+    ?>
 
 
